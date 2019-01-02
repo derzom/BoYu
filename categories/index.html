@@ -20,11 +20,37 @@
         <div class="av-pic" style="background-image: url(/assets/avatar.JPG)">
         </div>
     </section>
+
+    <script>
+        function searchInputChanged()
+        {
+            var search = document.getElementById("search");
+            var line = search.value;
+            if(line)
+            {
+                search.className = "search hasvalue";
+            }
+            else
+            {
+                search.className = "search";
+            }
+            if(event.keyCode == 13)
+            {
+                //To-Do: 转到文章搜索
+                //以下仅为临时使用
+                var url = "https://www.baidu.com/";
+                if(line) url += "s?wd=" + line;
+                window.open(url);
+            }
+        }
+    </script>
+
     <section class="menu">
         <div>BoYu&#39;s Blog</div>
         
-            <div>Do we made bugs or bugs made us?</div>
+            <div>Expect the unexpected.</div>
         
+        <input type="text" id="search" class="search" placeholder="Search here..." onkeyup="searchInputChanged()">
         <ul>
           
             <a href="/" class="Btn">
@@ -66,6 +92,15 @@
       
 
       
+        <ul class="Tags">
+          
+  <li class="tag-list">
+  { <a href="/categories/first-article/">first article</a> } (1)
+  </li>
+
+
+        </ul>
+      
 
     </section>
     
@@ -75,14 +110,14 @@
 </div>
 
             <footer>
-    <div>© 2018 - BoYu Chai </div>
+    <div>© 2019 - BoYu Chai </div>
     <div>
         <span>
             Powered by <a href="https://hexo.io">Hexo</a>
         </span>
         ,
         <span>
-            Theme - <a href="https://github.com/nameoverflow/hexo-theme-icalm">Icalm</a>
+            BaseTheme - <a href="https://github.com/nameoverflow/hexo-theme-icalm">Icalm</a>
         </span>
     </div>
 </footer>

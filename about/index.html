@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>about | BoYu&#39;s Blog</title>
+  <title>About Me | BoYu&#39;s Blog</title>
   
   
   
@@ -20,11 +20,37 @@
         <div class="av-pic" style="background-image: url(/assets/avatar.JPG)">
         </div>
     </section>
+
+    <script>
+        function searchInputChanged()
+        {
+            var search = document.getElementById("search");
+            var line = search.value;
+            if(line)
+            {
+                search.className = "search hasvalue";
+            }
+            else
+            {
+                search.className = "search";
+            }
+            if(event.keyCode == 13)
+            {
+                //To-Do: 转到文章搜索
+                //以下仅为临时使用
+                var url = "https://www.baidu.com/";
+                if(line) url += "s?wd=" + line;
+                window.open(url);
+            }
+        }
+    </script>
+
     <section class="menu">
         <div>BoYu&#39;s Blog</div>
         
-            <div>Do we made bugs or bugs made us?</div>
+            <div>Expect the unexpected.</div>
         
+        <input type="text" id="search" class="search" placeholder="Search here..." onkeyup="searchInputChanged()">
         <ul>
           
             <a href="/" class="Btn">
@@ -59,11 +85,29 @@
             <div>
   <article class="ContentView">
     <header class="PageTitle">
-        <h1>about</h1>
+        <h1>About Me</h1>
     </header>
 
     <section>
-      
+      <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>姓名就不说了，认识我的看我头像就知道，不认识的其实我也不想告诉你~</li>
+<li>本科生，专业软件工程，学习一般吧，Java, C++, C#算是用的比较多的了(精通是不可能精通的，这辈子都不敢说精通的，只能是比入门高一点这个样子…)， SQL肯定会的，学校要求课程，不会就说不过去了，HTML、CSS这类的语言我对自己的要求是能看懂就行…说实话没打算向这方面发展(不过谁知道呢~)</li>
+<li>建立这个博客基本上算是心血来潮吧(但是是有目的的心血来潮~)，其实最早是打算购买一个学生服务器搭建自己的博客来着，奈何资金短缺(好吧，其实是自身技术水平低下，现在一个hexo博客的主题用的都是别人的模板…逃…)，所以最终选择了hexo+github的方案搭建自己的blog。搭建这个个人博客的主要目的是通过”强迫”自己写博客的方式督促自己学习，还有就是小小的满足一下自己的虚荣心——我有个博客！自己建的！用MarkDown编写！老牛逼了！(虽然大部分技术活都交给hexo了…再逃…)</li>
+<li>言归正传，计划是在完全搭建好之后就开始在学习的过程中慢慢发布文章了，如果你觉得很简单，没什么技术含量，希望你能指正我在文章中的错误(如果有的话)，如果对你有帮助，那再好不过了。</li>
+</ul>
+<hr>
+<h2 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h2><ul>
+<li>我的QQ：1303371335</li>
+<li>电子邮件：<a href="mailto:1303371335@qq.com" target="_blank" rel="noopener">1303371335@qq.com</a> / <a href="mailto:cby1998722@gmail.com" target="_blank" rel="noopener">cby1998722@gmail.com</a></li>
+</ul>
+<font color="gray"><em>没事就加一波好友呗，毕竟对于这种github博客，你能进来就是缘分~</em></font>
+
+<hr>
+<h2 id="PS"><a href="#PS" class="headerlink" title="PS:"></a>PS:</h2><ul>
+<li>博客仍未完工，部分功能仍在调整</li>
+<li>接上条，比如说左边的搜索框，你一定以为他能搜索文章，实际上它只能带你到百度搜索…</li>
+</ul>
+
 
       
 
@@ -75,14 +119,14 @@
 </div>
 
             <footer>
-    <div>© 2018 - BoYu Chai </div>
+    <div>© 2019 - BoYu Chai </div>
     <div>
         <span>
             Powered by <a href="https://hexo.io">Hexo</a>
         </span>
         ,
         <span>
-            Theme - <a href="https://github.com/nameoverflow/hexo-theme-icalm">Icalm</a>
+            BaseTheme - <a href="https://github.com/nameoverflow/hexo-theme-icalm">Icalm</a>
         </span>
     </div>
 </footer>
