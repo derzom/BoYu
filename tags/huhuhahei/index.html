@@ -36,12 +36,12 @@
             {
                 search.className = "search";
             }
-            if(event.keyCode == 13)
+            if(line && event.keyCode == 13)
             {
                 //To-Do: 转到文章搜索
                 //以下仅为临时使用
                 var url = "https://www.baidu.com/";
-                if(line) url += "s?wd=" + line;
+                url += "s?wd=" + line;
                 window.open(url);
             }
         }
