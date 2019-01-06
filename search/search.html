@@ -132,65 +132,209 @@
     <div class="Container">
         <div class="container">
             <div>
-                <div class="Archives">
+                <div>
+  <article class="ContentView">
+    <header class="PageTitle">
+        <h1></h1>
+    </header>
+
+    <section>
+      <!--
+BUG-To-Fix:
+·搜索结果需要进行排版，现在的板式太难看
+·返回时存在搜索结果无法刷新问题(目前已经确认问题在singlepager, 但无法修复)，暂定以下两种"解决方案":
+{
+  ·删除singlepager,大量使用动画，消除跳转时每次刷新的"尴尬局面"
+  ·慢慢改进，寻找问题，尝试在不改动singlepager的情况下修复问题
+}
+-->
+
+<style>
+
+  /*标题样式*/
+  .title {
+    color: black;
+  }
+
+  /*内容样式*/
+  .content {
+    color: black;
+  }
+
+  /*检索到的关键字的样式*/
+  .search-keyword {
+    color: red;
+  }
+
+  /*未找到关键字时的样式*/
+  .empty {
+    color: black;
+  }
+
+</style>
+
+<body>
+
+  <div id="result">如果你看到这行字，说明搜索功能凉了...请联系我修复...</div>
   
-  
-  
+</body>
+
+<script type="text/javascript" src="../js/jquery_3.2.1.js"></script>
+
+<script type="text/javascript">
+var searchFunc = function (path, kWord, content_id) {
+  // 0x00. environment initialization
+  'use strict';
+  var $resultContent = document.getElementById(content_id);
+  $resultContent.innerHTML ="<ul>首次搜索，正在载入索引文件，请稍后……</ul>";
+  $.ajax({
+    // 0x01. load xml file / 装载搜索用XML文档
+    url: path,
+    dataType: "xml",
+    success: function (xmlResponse) {
+      // 0x02. parse xml file
+      var datas = $("entry", xmlResponse).map(function () {
+        return {
+          title: $("title", this).text(),
+          content: $("content", this).text(),
+          url: $("url", this).text()
+        };
+      }).get();
+      $resultContent.innerHTML = "";
+
+      // 0x03. parse query to keywords list
+      var str = '<ul>';
+      var keywords = kWord.trim().toLowerCase().split(/[\s\-]+/);
+      $resultContent.innerHTML = "";
+
+      // 0x04. perform local searching
+      datas.forEach(function (data) {
+        var isMatch = true;
+        var content_index = [];
+        if (!data.title || data.title.trim() === '') {
+          data.title = "Untitled";
+        }
+        var orig_data_title = data.title.trim();
+        var data_title = orig_data_title.toLowerCase();
+        var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+        var data_content = orig_data_content.toLowerCase();
+        var data_url = data.url;
+        var index_title = -1;
+        var index_content = -1;
+        var first_occur = -1;
+        // only match artiles with not empty contents
+        if (data_content !== '') {
+          keywords.forEach(function (keyword, i) {
+            index_title = data_title.indexOf(keyword);
+            index_content = data_content.indexOf(keyword);
+
+            if (index_title < 0 && index_content < 0) {
+              isMatch = false;
+            } else {
+              if (index_content < 0) {
+                index_content = 0;
+              }
+              if (i == 0) {
+                first_occur = index_content;
+              }
+            }
+          });
+        } else {
+          isMatch = false;
+        }
+        // 0x05. show search results
+        if (isMatch) {
+          var match_title = orig_data_title;
+            // highlight all keywords in title
+            keywords.forEach(function (keyword) {
+            var regS = new RegExp(keyword, "gi");
+            match_title = match_title.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+          });
+          
+          str += "<li><a class='title' href='.." + data_url + "'>" + match_title + "</a>";
+          var content = orig_data_content;
+          if (first_occur >= 0) {
+            // cut out 100 characters
+            var start = first_occur - 20;
+            var end = first_occur + 80;
+
+            if (start < 0) {
+              start = 0;
+            }
+
+            if (start == 0) {
+              end = 100;
+            }
+
+            if (end > content.length) {
+              end = content.length;
+            }
+
+            var match_content = content.substr(start, end);
+
+            // highlight all keywords in content
+            keywords.forEach(function (keyword) {
+              var regS = new RegExp(keyword, "gi");
+              match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+            });
+
+            str += "<p class='content'>" + match_content + "...</p>"
+          }
+          str += "</li>";
+        }
+      });
+      str += "</ul>";
+      if (str.indexOf('<li>') === -1) {
+        return $resultContent.innerHTML = "<ul><span class='empty'>没有找到内容，请尝试更换检索词。</span></ul>";
+      }
+      $resultContent.innerHTML = str;
+    }
+  });
+  $(document).on('click', '#local-search-close', function() {
+    $('#local-search-input').val('');
+    $('#local-search-result').html('');
+  });
+}
+</script>
+
+<script type="text/javascript">
+    //搜索页面，进入后自动开始处理数据
+    !function GetRequest() {
+      //部件元素
+      var ele_search = document.getElementById("search"); //左侧搜索框
     
-    <section class="TimeSection">
-    <h1 class="time-section-year">
-        2018
-    </h1>
-    <ul class="time-section-list">
+      //保存关键字
+      var keyword = "";
+    
+      /**
+       * 提取关键字
+       * Warning:多关键字的情况下存在问题，但不会出现安全性问题且正常操作不会出现这类情况，不做处理
+      */
+      var url = location.search.substr(1);
+      var pos = url.indexOf("keyword=");
+      if(pos > -1) keyword = decodeURI(url.substr(pos + 8));
+    
+      //恢复搜索框中的数据
+      if(keyword)
+      {
+        ele_search.value = keyword;
+        ele_search.className = "search hasvalue";
+      }
+
+      searchFunc("search.xml",keyword,"result");
+    }()
+</script>
+
+
       
-      
-        <li>
-            <a href="/2018/12/30/hello-world/">
-                <h2>Hello World</h2>
-            </a>
-            <div class="ListMeta">
-  <time datetime="2018-12-29T17:43:12.000Z" itemprop="datePublished">
-    2018-12-30
-  </time>
-  
-  | 
-  <ul>
+
+    </section>
     
-  <li class="meta-text">
-  { <a href="/tags/666/">666</a> }
-  </li>
-
-  <li class="meta-text">
-  { <a href="/tags/wow/">wow</a> }
-  </li>
-
-  <li class="meta-text">
-  { <a href="/tags/huhuhahei/">huhuhahei</a> }
-  </li>
-
-
-  </ul>
-  
-  
-  / 
-  <ul>
     
-  <li class="meta-text">
-  { <a href="/categories/first-article/">first article</a> }
-  </li>
+</article>
 
-
-  </ul>
-  
 </div>
 
-        </li>
-      
-    </ul>
-</section>
-
-  
-</div>
                 <script type="text/javascript">
 var bszCaller, bszTag; 
 !function() {

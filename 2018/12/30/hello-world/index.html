@@ -15,12 +15,62 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
+<style type="text/css">
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@-moz-keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@-o-keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@-webkit-keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+
+.SideMenu {
+    animation: fade-in;
+    animation-duration: 1.5s;
+    animation-delay: 0s;
+    -moz-animation: fade-in;
+    -moz-animation-duration: 1.5s;
+    -moz-animation-delay: 0s;
+    -o-animation: fade-in;
+    -o-animation-duration: 1.5s;
+    -o-animation-delay: 0s;
+    -webkit-animation: fade-in;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-delay: 0s;
+}
+
+.Container {
+    animation: fade-in;
+    animation-duration: 1.5s;
+    animation-delay: 0s;
+    -moz-animation: fade-in;
+    -moz-animation-duration: 1.5s;
+    -moz-animation-delay: 0s;
+    -o-animation: fade-in;
+    -o-animation-duration: 1.5s;
+    -o-animation-delay: 0s;
+    -webkit-animation: fade-in;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-delay: 0s;
+}
+</style>
 <body>
 <div class="Shell">
-    <aside class="SideBar">
+    <div class="SideMenu">
+        <aside class="SideBar">
     <section class="avatar" style="background-image: url()">
-        <div class="av-pic" style="background-image: url(/assets/avatar.JPG)">
-        </div>
+        <img class="av-pic" src="/assets/avatar.JPG">
     </section>
 
     <script>
@@ -38,11 +88,7 @@
             }
             if(line && event.keyCode == 13)
             {
-                //To-Do: 转到文章搜索
-                //以下仅为临时使用
-                var url = "https://www.baidu.com/";
-                url += "s?wd=" + line;
-                window.open(url);
+                window.location.href="/search/search.html?keyword=" + line;
             }
         }
     </script>
@@ -82,9 +128,11 @@
     </section>
 </aside>
 
-    <div class="container">
-        <div data-pager-shell>
+    </div>
+    <div class="Container">
+        <div class="container">
             <div>
+                <div>
   <article class="ContentView">
     <header class="PageTitle">
         <h1>Hello World</h1>
@@ -144,7 +192,7 @@
   
 </div>
 
-            <script type="text/javascript">
+                <script type="text/javascript">
 var bszCaller, bszTag; 
 !function() {
     var c, d, e, a = !1,
@@ -242,13 +290,9 @@ bszTag = {
     </div>
 </footer>
 
+            </div>
         </div>
     </div>
 </div>
-<script src="/js/pager/dist/singlepager.js"></script>
-<script>
-var sp = new Pager('data-pager-shell')
-
-</script>
 </body>
 </html>
