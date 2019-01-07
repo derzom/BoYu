@@ -4,11 +4,11 @@ function searchInputChanged()
     var line = search.value;
     if(line)
     {
-        search.className = "search hasvalue";
+        search.className = "searchline hasvalue";
     }
     else
     {
-        search.className = "search";
+        search.className = "searchline";
     }
     if(line && event.keyCode == 13)
     {
