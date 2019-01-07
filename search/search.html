@@ -77,32 +77,14 @@
         <img class="av-pic" src="/assets/avatar.JPG">
     </section>
 
-    <script>
-        function searchInputChanged()
-        {
-            var search = document.getElementById("search");
-            var line = search.value;
-            if(line)
-            {
-                search.className = "search hasvalue";
-            }
-            else
-            {
-                search.className = "search";
-            }
-            if(line && event.keyCode == 13)
-            {
-                window.location.href="/search/search.html?keyword=" + line;
-            }
-        }
-    </script>
+    <script src="/js/sidebar.js"></script>
 
     <section class="menu">
         <div>BoYu&#39;s Blog</div>
         
             <div>Expect the unexpected.</div>
         
-        <input type="text" id="search" class="search" placeholder="Search here..." onkeyup="searchInputChanged()">
+        <input type="text" id="search" class="searchline" placeholder="Search here..." onkeyup="searchInputChanged()">
         <ul>
           
             <a href="/" class="Btn">
@@ -143,17 +125,7 @@
     </header>
 
     <section>
-      <!--
-BUG-To-Fix:
-·搜索结果需要进行排版，现在的板式太难看
-·返回时存在搜索结果无法刷新问题(目前已经确认问题在singlepager, 但无法修复)，暂定以下两种"解决方案":
-{
-  ·删除singlepager,大量使用动画，消除跳转时每次刷新的"尴尬局面"
-  ·慢慢改进，寻找问题，尝试在不改动singlepager的情况下修复问题
-}
--->
-
-<style>
+      <style>
 
   /*标题样式*/
   .title {

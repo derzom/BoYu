@@ -77,32 +77,14 @@
         <img class="av-pic" src="/assets/avatar.JPG">
     </section>
 
-    <script>
-        function searchInputChanged()
-        {
-            var search = document.getElementById("search");
-            var line = search.value;
-            if(line)
-            {
-                search.className = "search hasvalue";
-            }
-            else
-            {
-                search.className = "search";
-            }
-            if(line && event.keyCode == 13)
-            {
-                window.location.href="/search/search.html?keyword=" + line;
-            }
-        }
-    </script>
+    <script src="/js/sidebar.js"></script>
 
     <section class="menu">
         <div>BoYu&#39;s Blog</div>
         
             <div>Expect the unexpected.</div>
         
-        <input type="text" id="search" class="search" placeholder="Search here..." onkeyup="searchInputChanged()">
+        <input type="text" id="search" class="searchline" placeholder="Search here..." onkeyup="searchInputChanged()">
         <ul>
           
             <a href="/" class="Btn">
