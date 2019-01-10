@@ -835,7 +835,7 @@ blockquote {
   .sidebar {
     position: absolute;
     opacity: 0;
-    top: -9em;
+    top: -14em;
     left: 0;
     right: 0;
     height: 10em;
