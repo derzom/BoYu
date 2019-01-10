@@ -77,7 +77,7 @@ var searchFunc = function (path, kWord, content_id) {
             });
             
             str += "<li><a class='title' href='.." + data_url + "'>" + match_title + "</a>";
-            str += "<span style='color:light-gray;display:inline-block;font-size: 80%;'>";
+            str += "<span style='color:gray;display:inline-block;font-size: 80%;'>";
             str += categories ? categories : "not classified";
             str += " | ";
             str += tags ? tags : "not tagged";
