@@ -15,64 +15,10 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<style type="text/css">
-@keyframes fade-in {
-    0% {opacity: 0;}
-    20% {opacity: 0;}
-    100% {opacity: 1;}
-}
-@-moz-keyframes fade-in {
-    0% {opacity: 0;}
-    20% {opacity: 0;}
-    100% {opacity: 1;}
-}
-@-o-keyframes fade-in {
-    0% {opacity: 0;}
-    20% {opacity: 0;}
-    100% {opacity: 1;}
-}
-@-webkit-keyframes fade-in {
-    0% {opacity: 0;}
-    20% {opacity: 0;}
-    100% {opacity: 1;}
-}
+<script src="/js/jquery_3.2.1.js"></script>
 
-
-
-.SideMenu {
-    animation: fade-in;
-    animation-duration: 1s;
-    animation-delay: 0s;
-    -moz-animation: fade-in;
-    -moz-animation-duration: 1s;
-    -moz-animation-delay: 0s;
-    -o-animation: fade-in;
-    -o-animation-duration: 1s;
-    -o-animation-delay: 0s;
-    -webkit-animation: fade-in;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-delay: 0s;
-}
-
-.Container {
-    animation: fade-in;
-    animation-duration: 1s;
-    animation-delay: 0s;
-    -moz-animation: fade-in;
-    -moz-animation-duration: 1s;
-    -moz-animation-delay: 0s;
-    -o-animation: fade-in;
-    -o-animation-duration: 1s;
-    -o-animation-delay: 0s;
-    -webkit-animation: fade-in;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-delay: 0s;
-}
-</style>
 <body>
-<div class="Shell">
-    <div class="SideMenu">
-        <aside class="SideBar">
+<aside class="sidebar">
     <section class="avatar" style="background-image: url()">
         <img class="av-pic" src="/assets/avatar.JPG">
     </section>
@@ -114,11 +60,9 @@
     </section>
 </aside>
 
-    </div>
-    <div class="Container">
-        <div class="container">
-            <div>
-                <ul class="Index">
+<div class="container">
+    <div>
+        <ul class="Index">
   
     <header class="PageTitle">
         <h1>{ wow }</h1>
@@ -188,7 +132,7 @@
 
 
 
-                <script type="text/javascript">
+        <script type="text/javascript">
 var bszCaller, bszTag; 
 !function() {
     var c, d, e, a = !1,
@@ -286,9 +230,19 @@ bszTag = {
     </div>
 </footer>
 
-            </div>
-        </div>
     </div>
 </div>
 </body>
+
+<script type="text/javascript">
+
+//animation
+!function display()
+{
+    $(".sidebar").animate({opacity:"1",top:"0",left:"0"},600);
+    $(".container").delay(500).animate({opacity:"1",top:"0"},600);
+}()
+    
+</script>
+
 </html>

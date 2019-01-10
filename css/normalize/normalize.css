@@ -158,6 +158,7 @@ img {
  */
 
 button,
+input,
 optgroup,
 select,
 textarea {
@@ -172,7 +173,8 @@ textarea {
  * 1. Show the overflow in Edge.
  */
 
-button { /* 1 */
+button,
+input { /* 1 */
   overflow: visible;
 }
 
