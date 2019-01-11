@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>BoYu&#39;s Blog</title>
+  <title>解决方案-MySQL-Linux下MySQL问题 | BoYu&#39;s Blog</title>
   
     <link rel="icon" href="/assets/favicon.ico">
   
@@ -62,57 +62,14 @@
 
 <div class="container">
     <div>
-        <ul class="Index">
-  
-  
-    <li>
-      <article class="ListView">
-    <header class="title">
-      
-        <h1>
-          <a href="/2019/01/12/解决方案-MySQL-Linux下MySQL问题/">解决方案-MySQL-Linux下MySQL问题</a>
-        </h1>
-      
-      <div class="ListMeta">
-  <time datetime="2019-01-11T17:13:26.000Z" itemprop="datePublished">
-    2019-01-12
-  </time>
-  
-  | 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/tags/Linux/">Linux</a> }
-  </li>
-
-  <li class="meta-text">
-  { <a href="/tags/MySQL/">MySQL</a> }
-  </li>
-
-
-  </ul>
-  
-  
-  / 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/categories/解决方案/">解决方案</a> }
-  </li>
-
-  <li class="meta-text">
-  { <a href="/categories/解决方案/MySQL/">MySQL</a> }
-  </li>
-
-
-  </ul>
-  
-</div>
-
+        <div>
+  <article class="ContentView">
+    <header class="PageTitle">
+        <h1>解决方案-MySQL-Linux下MySQL问题</h1>
     </header>
-    <div>
-      
-        <h2 id="Linux下MySQL问题"><a href="#Linux下MySQL问题" class="headerlink" title="Linux下MySQL问题"></a>Linux下MySQL问题</h2><p>这篇文档记录了我在Linux系统下使用MySQL时遇到的问题。</p>
+
+    <section>
+      <h2 id="Linux下MySQL问题"><a href="#Linux下MySQL问题" class="headerlink" title="Linux下MySQL问题"></a>Linux下MySQL问题</h2><p>这篇文档记录了我在Linux系统下使用MySQL时遇到的问题。</p>
 <hr>
 <p><br></p>
 <h3 id="●-启动MySQL时提示No-directory-logging-in-with-HOME"><a href="#●-启动MySQL时提示No-directory-logging-in-with-HOME" class="headerlink" title="● 启动MySQL时提示No directory, logging in with HOME=/"></a>● 启动MySQL时提示No directory, logging in with HOME=/</h3><p><strong>问题示例</strong></p>
@@ -132,65 +89,58 @@
 <p>在输出结果中找到password = xXxXxXxXxXxX字段:<br><img src="debian.jpeg" alt="debian.cnf"></p>
 <p>在控制台登入MySQL，之后输入如下指令（其中xXxXxXxXxXxX替换为上一步中password字段的值）:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> ALL <span class="keyword">PRIVILEGES</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'debian-sys-maint'</span>@<span class="string">'localhost'</span> </span><br><span class="line"><span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'xXxXxXxXxXxX'</span> <span class="keyword">WITH</span> <span class="keyword">GRANT</span> <span class="keyword">OPTION</span>;</span><br></pre></td></tr></table></figure>
+
       
-    </div>
+
+    </section>
+    
+      <section class="ArticleMeta">
+          <div>
+            发布:
+            <time datetime="2019-01-11T17:13:26.000Z" itemprop="datePublished">
+              2019-01-12
+            </time>
+            }
+              &nbsp;&nbsp;最后更新:
+              <time datetime="2019-01-11T18:12:15.795Z" itemprop="datePublished">
+              2019-01-12
+            
+          </time>
+          </div>
+          <div>
+            
+              
+  <li class="meta-text">
+  { <a href="/categories/解决方案/">解决方案</a> }
+  </li>
+
+  <li class="meta-text">
+  { <a href="/categories/解决方案/MySQL/">MySQL</a> }
+  </li>
+
+
+            
+            &nbsp;|&nbsp;
+            
+                
+  <li class="meta-text">
+  { <a href="/tags/Linux/">Linux</a> }
+  </li>
+
+  <li class="meta-text">
+  { <a href="/tags/MySQL/">MySQL</a> }
+  </li>
+
+
+            
+          </div>
+      </section>
+    
+    
 </article>
 
-    </li>
-  
-    <li>
-      <article class="ListView">
-    <header class="title">
-      
-        <h1>
-          <a href="/2018/12/30/hello-world/">Hello World</a>
-        </h1>
-      
-      <div class="ListMeta">
-  <time datetime="2018-12-29T17:43:12.000Z" itemprop="datePublished">
-    2018-12-30
-  </time>
-  
-  | 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/tags/hexo/">hexo</a> }
-  </li>
-
-
-  </ul>
-  
-  
-  / 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/categories/hello-world/">hello world</a> }
-  </li>
-
-
-  </ul>
   
 </div>
-
-    </header>
-    <div>
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-        
-          <div class="more-link">
-            <a href="/2018/12/30/hello-world/#more">Read On »</a>
-          </div>
-        
-      
-    </div>
-</article>
-
-    </li>
-  
-</ul>
-
 
         <script type="text/javascript">
 var bszCaller, bszTag; 
