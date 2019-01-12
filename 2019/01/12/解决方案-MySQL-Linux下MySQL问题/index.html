@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>BoYu&#39;s Blog</title>
+  <title>Linux下MySQL问题 | BoYu&#39;s Blog</title>
   
     <link rel="icon" href="/assets/favicon.ico">
   
@@ -62,41 +62,69 @@
 
 <div class="container">
     <div>
-        <div class="Archives">
-  
-  
-  
-    
-    <section class="TimeSection">
-    <h1 class="time-section-year">
-        2019
-    </h1>
-    <ul class="time-section-list">
+        <div>
+  <article class="ContentView">
+    <header class="PageTitle">
+        <h1>Linux下MySQL问题</h1>
+    </header>
+
+    <section>
+      <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>这篇文档记录了我在Linux系统下使用MySQL时遇到的问题，问题列表如下：</p>
+<ul>
+<li>启动MySQL时提示No directory, logging in with HOME=/</li>
+<li>无法启动MySQL服务</li>
+<li>无法终止MySQL服务</li>
+</ul>
+<a id="more"></a>
+<hr>
+<p><br></p>
+<h3 id="●-启动MySQL时提示No-directory-logging-in-with-HOME"><a href="#●-启动MySQL时提示No-directory-logging-in-with-HOME" class="headerlink" title="● 启动MySQL时提示No directory, logging in with HOME=/"></a>● 启动MySQL时提示No directory, logging in with HOME=/</h3><p><strong>问题示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Starting MySQL database server mysqld  [fail]</span><br><span class="line">No directory, logging in with HOME=/</span><br></pre></td></tr></table></figure>
+<p><strong>解决方案</strong><br>在控制台输入以下指令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -d /var/lib/mysql/ mysql</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="●-无法启动MySQL服务"><a href="#●-无法启动MySQL服务" class="headerlink" title="● 无法启动MySQL服务"></a>● 无法启动MySQL服务</h3><p><strong>问题示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Starting MySQL database server mysqld [fail]</span><br></pre></td></tr></table></figure>
+<p><strong>解决方案</strong><br>在控制台输入以下指令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R mysql: /var/lib/mysql</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="●-无法终止MySQL服务"><a href="#●-无法终止MySQL服务" class="headerlink" title="● 无法终止MySQL服务"></a>● 无法终止MySQL服务</h3><p><strong>问题示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stopping MySQL database server mysqld[fail]</span><br></pre></td></tr></table></figure>
+<p><strong>解决方案</strong><br>先在控制台执行以下指令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cat /etc/mysql/debian.cnf</span><br></pre></td></tr></table></figure>
+<p>在输出结果中找到password = xXxXxXxXxXxX字段:</p>
+<image src="debian.jpeg" width="60%" height="60%">
+
+<p>在控制台登入MySQL，之后输入如下指令（其中xXxXxXxXxXxX替换为上一步中password字段的值）:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> ALL <span class="keyword">PRIVILEGES</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'debian-sys-maint'</span>@<span class="string">'localhost'</span> </span><br><span class="line"><span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'xXxXxXxXxXxX'</span> <span class="keyword">WITH</span> <span class="keyword">GRANT</span> <span class="keyword">OPTION</span>;</span><br></pre></td></tr></table></figure></image>
+
       
-      
-        <li>
-            <a href="/2019/01/12/解决方案-MySQL-Linux下MySQL问题/">
-                <h2>Linux下MySQL问题</h2>
-            </a>
-            <div class="ListMeta">
-  <time datetime="2019-01-11T17:13:26.000Z" itemprop="datePublished">
-    2019-01-12
-  </time>
-  
-  | 
-  <ul>
+
+    </section>
     
+      <section class="ArticleMeta">
+          <div>
+            发布:
+            <time datetime="2019-01-11T17:13:26.000Z" itemprop="datePublished">
+              2019-01-12
+            </time>
+            &nbsp;&nbsp;最后更新:
+            <time datetime="2019-01-11T17:13:26.000Z" itemprop="datePublished">
+            2019-01-12 01:13:26
+            </time>
+          </div>
+          <div>
+            
+              
   <li class="meta-text">
   { <a href="/categories/解决方案/">解决方案</a> }
   </li>
 
 
-  </ul>
-  
-  
-  / 
-  <ul>
-    
+            
+            &nbsp;|&nbsp;
+            
+                
   <li class="meta-text">
   { <a href="/tags/Linux/">Linux</a> }
   </li>
@@ -106,17 +134,16 @@
   </li>
 
 
-  </ul>
-  
-</div>
-
-        </li>
-      
-    </ul>
-</section>
+            
+          </div>
+      </section>
+    
+    
+</article>
 
   
 </div>
+
         <script type="text/javascript">
 var bszCaller, bszTag; 
 !function() {
