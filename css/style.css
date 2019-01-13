@@ -811,10 +811,10 @@ blockquote {
   .sidebar {
     position: absolute;
     opacity: 0;
-    top: -14em;
+    top: -500px;
     left: 0;
     right: 0;
-    height: 10em;
+    height: 200px;
     width: auto;
     overflow: visible;
   }
