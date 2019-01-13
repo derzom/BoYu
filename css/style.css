@@ -768,6 +768,7 @@ blockquote {
 .avatar {
   height: 180px;
   background-color: #333;
+  background-size: 100% auto;
   position: absolute;
   width: 100%;
   top: 0;
