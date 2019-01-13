@@ -814,7 +814,7 @@ blockquote {
     top: -800px;
     left: 0;
     right: 0;
-    height: 400px;
+    height: auto;
     width: auto;
     overflow: visible;
   }
