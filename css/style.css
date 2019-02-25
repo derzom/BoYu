@@ -658,7 +658,7 @@ blockquote {
   height: 100%;
   position: fixed;
   background-color: #fff;
-  z-index: 10000;
+  z-index: 10;
 }
 .sidebar > section {
   width: 100%;
@@ -992,73 +992,69 @@ time {
 }
 .hljs {
     display: block;
-    background: white;
+    overflow-x: auto;
     padding: 0.5em;
-    color: #333333;
-    overflow-x: auto
+    background: white;
+    color: black
 }
 
 .comment,
-.meta {
-    color: #969896
-}
-
-.string,
-.variable,
-.template-variable,
-.strong,
-.emphasis,
-.quote {
-    color: #df5000
+.quote,
+.variable {
+    color: #008000
 }
 
 .keyword,
 .selector-tag,
-.type {
-    color: #a71d5d
+.built_in,
+.name,
+.tag {
+    color: #00f
 }
 
+.string,
+.title,
+.section,
+.attribute,
 .literal,
+.template-tag,
+.template-variable,
+.type,
+.addition {
+    color: #a31515
+}
+
+.deletion,
+.selector-attr,
+.selector-pseudo,
+.meta {
+    color: #2b91af
+}
+
+.doctag {
+    color: #808080
+}
+
+.attr {
+    color: #f00
+}
+
 .symbol,
 .bullet,
-.attribute {
-    color: #0086b3
-}
-
-.section,
-.name {
-    color: #63a35c
-}
-
-.tag {
-    color: #333333
-}
-
-.title,
-.attr,
-.selector-id,
-.selector-class,
-.selector-attr,
-.selector-pseudo {
-    color: #795da3
-}
-
-.addition {
-    color: #55a532;
-    background-color: #eaffea
-}
-
-.deletion {
-    color: #bd2c00;
-    background-color: #ffecec
-}
-
 .link {
-    text-decoration: underline
+    color: #00b0e8
+}
+
+.emphasis {
+    font-style: italic
+}
+
+.strong {
+    font-weight: bold
 }
 figure.highlight {
   display: block;
-  width: 92%;
+  width: 100%;
   margin: auto;
   overflow-x: auto;
   background-color: #fffff4;

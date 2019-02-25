@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
+
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +11,17 @@
   
   
   
-  <!--link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css"-->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css">
+
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <script src="/js/jquery_3.2.1.js"></script>
 
 <body>
+
+
+
+
 <aside class="sidebar">
     <section class="avatar" style="background-image: url(/assets/chipx.png)">
         <img class="av-pic" src="/assets/avatar.JPG">
@@ -92,11 +96,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stopping MySQL database server mysqld[fail]</span><br></pre></td></tr></table></figure>
 <p><strong>解决方案</strong><br>先在控制台执行以下指令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cat /etc/mysql/debian.cnf</span><br></pre></td></tr></table></figure>
-<p>在输出结果中找到password = xXxXxXxXxXxX字段:</p>
-<image src="debian.jpeg" width="60%" height="60%">
-
+<p>在输出结果中找到password = xXxXxXxXxXxX字段:<br><img src="debian.jpeg" width="60%" height="60%"></p>
 <p>在控制台登入MySQL，之后输入如下指令（其中xXxXxXxXxXxX替换为上一步中password字段的值）:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> ALL <span class="keyword">PRIVILEGES</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'debian-sys-maint'</span>@<span class="string">'localhost'</span> </span><br><span class="line"><span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'xXxXxXxXxXxX'</span> <span class="keyword">WITH</span> <span class="keyword">GRANT</span> <span class="keyword">OPTION</span>;</span><br></pre></td></tr></table></figure></image>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> ALL <span class="keyword">PRIVILEGES</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'debian-sys-maint'</span>@<span class="string">'localhost'</span> </span><br><span class="line"><span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'xXxXxXxXxXxX'</span> <span class="keyword">WITH</span> <span class="keyword">GRANT</span> <span class="keyword">OPTION</span>;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -246,6 +248,7 @@ bszTag = {
 
     </div>
 </div>
+
 </body>
 
 <script type="text/javascript">
