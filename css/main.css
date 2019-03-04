@@ -1793,11 +1793,82 @@ pre .javascript .function {
 .site-author-image {
   display: block;
   margin: 0 auto;
-  padding: 2px;
+  padding: 3px;
   max-width: 120px;
   height: auto;
   border: 1px solid #eee;
   opacity: 1;
+}
+.site-author-image {
+  border-radius: 100%;
+}
+.site-author-image:hover {
+  box-shadow: 0 1px 0 1px rgba(215,85,112,0.25) inset, 0 -1px 0 1px rgba(149,195,174,0.25) inset, 1px 0 0 1px rgba(215,85,112,0.25) inset, -1px 0 0 1px rgba(149,195,174,0.25) inset, 1px -1px 0 1px rgba(182,140,143,0.5) inset, -1px 1px 0 1px rgba(182,140,143,0.5) inset, 1px 1px 0 1px rgba(248,31,82,0.75) inset, -1px -1px 0 1px rgba(117,250,205,0.75) inset;
+  animation: rotateThis 1s linear infinite;
+}
+@-moz-keyframes rotateThis {
+  from {
+    -webkit-transform: rotate(0deg) scale(1);
+    -moz-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    -o-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(1);
+    -moz-transform: rotate(360deg) scale(1);
+    -ms-transform: rotate(360deg) scale(1);
+    -o-transform: rotate(360deg) scale(1);
+    transform: rotate(360deg) scale(1);
+  }
+}
+@-webkit-keyframes rotateThis {
+  from {
+    -webkit-transform: rotate(0deg) scale(1);
+    -moz-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    -o-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(1);
+    -moz-transform: rotate(360deg) scale(1);
+    -ms-transform: rotate(360deg) scale(1);
+    -o-transform: rotate(360deg) scale(1);
+    transform: rotate(360deg) scale(1);
+  }
+}
+@-o-keyframes rotateThis {
+  from {
+    -webkit-transform: rotate(0deg) scale(1);
+    -moz-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    -o-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(1);
+    -moz-transform: rotate(360deg) scale(1);
+    -ms-transform: rotate(360deg) scale(1);
+    -o-transform: rotate(360deg) scale(1);
+    transform: rotate(360deg) scale(1);
+  }
+}
+@keyframes rotateThis {
+  from {
+    -webkit-transform: rotate(0deg) scale(1);
+    -moz-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    -o-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(1);
+    -moz-transform: rotate(360deg) scale(1);
+    -ms-transform: rotate(360deg) scale(1);
+    -o-transform: rotate(360deg) scale(1);
+    transform: rotate(360deg) scale(1);
+  }
 }
 .site-author-name {
   margin: 0;
@@ -1881,7 +1952,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #dff72e;
+  background: #bbd6af;
 }
 .links-of-blogroll {
   font-size: 13px;
