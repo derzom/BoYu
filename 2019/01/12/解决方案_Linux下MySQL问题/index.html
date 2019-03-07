@@ -321,7 +321,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="What are you interested in?" spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -486,7 +486,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stopping MySQL database server mysqld[fail]</span><br></pre></td></tr></table></figure>
 <p><strong>解决方案</strong><br>先在控制台执行以下指令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cat /etc/mysql/debian.cnf</span><br></pre></td></tr></table></figure>
-<p>在输出结果中找到password = xXxXxXxXxXxX字段:<br><img src="debian.jpeg" width="60%" height="60%"></p>
+<p>在输出结果中找到password = xXxXxXxXxXxX字段:<br><img src="debian.jpeg" alt="password字段位置" width="60%" height="60%"></p>
 <p>在控制台登入MySQL，之后输入如下指令（其中xXxXxXxXxXxX替换为上一步中password字段的值）:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> ALL <span class="keyword">PRIVILEGES</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'debian-sys-maint'</span>@<span class="string">'localhost'</span> </span><br><span class="line"><span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'xXxXxXxXxXxX'</span> <span class="keyword">WITH</span> <span class="keyword">GRANT</span> <span class="keyword">OPTION</span>;</span><br></pre></td></tr></table></figure>
       
@@ -522,6 +522,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/05/随笔-毕达哥拉斯平均数/" rel="prev" title="毕达哥拉斯平均数">
+                毕达哥拉斯平均数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -585,7 +601,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -600,7 +616,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -617,7 +635,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -1193,6 +1213,13 @@
   
 
   
+  
+
+  
+  
+
+  
+
 
   
 
