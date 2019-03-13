@@ -92,13 +92,13 @@
 
 
 
-  <meta name="description" content="人类能以很多方式来标识，例如我们能够通过出生证书上的名字来标识，能够通过社会保险号码来标识，也能够通过驾驶执照上的号码来标识。因特网上的主机和人类一样，可以使用多种方式进行标识。主机的一种标识方法是用它的主机名(hostnamae)，如 cnn.com、www.baidu.com 等，这些名字便于记忆也乐于被人们接受。然而主机名并没有提供关于主机在因特网中位置的信息，且路由器很难处理这种由不定长字">
+  <meta name="description" content="人类能以很多方式来标识，例如我们能够通过出生证明上的名字来标识，能够通过社保卡号码来标识，也能够通过驾驶执照上的号码来标识。因特网上的主机和人类一样，可以使用多种方式进行标识。主机的一种标识方法是用它的主机名(hostnamae)，如 cnn.com、www.baidu.com 等，这些名字便于记忆也乐于被人们接受。然而主机名并没有提供关于主机在因特网中位置的信息，且路由器很难处理这种由不定长字母">
 <meta name="keywords" content="计算机网络,DNS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DNS概述">
 <meta property="og:url" content="https://aurora-void.com/2019/03/12/学习笔记-计算机网络-DNS概述/index.html">
 <meta property="og:site_name" content="BoYu&#39;s Blog">
-<meta property="og:description" content="人类能以很多方式来标识，例如我们能够通过出生证书上的名字来标识，能够通过社会保险号码来标识，也能够通过驾驶执照上的号码来标识。因特网上的主机和人类一样，可以使用多种方式进行标识。主机的一种标识方法是用它的主机名(hostnamae)，如 cnn.com、www.baidu.com 等，这些名字便于记忆也乐于被人们接受。然而主机名并没有提供关于主机在因特网中位置的信息，且路由器很难处理这种由不定长字">
+<meta property="og:description" content="人类能以很多方式来标识，例如我们能够通过出生证明上的名字来标识，能够通过社保卡号码来标识，也能够通过驾驶执照上的号码来标识。因特网上的主机和人类一样，可以使用多种方式进行标识。主机的一种标识方法是用它的主机名(hostnamae)，如 cnn.com、www.baidu.com 等，这些名字便于记忆也乐于被人们接受。然而主机名并没有提供关于主机在因特网中位置的信息，且路由器很难处理这种由不定长字母">
 <meta property="og:locale" content="custom">
 <meta property="og:image" content="https://aurora-void.com/2019/03/12/学习笔记-计算机网络-DNS概述/DNS服务器的部分层次结构.jpg">
 <meta property="og:image" content="https://aurora-void.com/2019/03/12/学习笔记-计算机网络-DNS概述/DNS报文格式.jpg">
@@ -108,7 +108,7 @@
 <meta property="og:updated_time" content="2019-03-12T07:16:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DNS概述">
-<meta name="twitter:description" content="人类能以很多方式来标识，例如我们能够通过出生证书上的名字来标识，能够通过社会保险号码来标识，也能够通过驾驶执照上的号码来标识。因特网上的主机和人类一样，可以使用多种方式进行标识。主机的一种标识方法是用它的主机名(hostnamae)，如 cnn.com、www.baidu.com 等，这些名字便于记忆也乐于被人们接受。然而主机名并没有提供关于主机在因特网中位置的信息，且路由器很难处理这种由不定长字">
+<meta name="twitter:description" content="人类能以很多方式来标识，例如我们能够通过出生证明上的名字来标识，能够通过社保卡号码来标识，也能够通过驾驶执照上的号码来标识。因特网上的主机和人类一样，可以使用多种方式进行标识。主机的一种标识方法是用它的主机名(hostnamae)，如 cnn.com、www.baidu.com 等，这些名字便于记忆也乐于被人们接受。然而主机名并没有提供关于主机在因特网中位置的信息，且路由器很难处理这种由不定长字母">
 <meta name="twitter:image" content="https://aurora-void.com/2019/03/12/学习笔记-计算机网络-DNS概述/DNS服务器的部分层次结构.jpg">
 
 
@@ -468,7 +468,7 @@
       
 
       
-        <p>人类能以很多方式来标识，例如我们能够通过出生证书上的名字来标识，能够通过社会保险号码来标识，也能够通过驾驶执照上的号码来标识。<br>因特网上的主机和人类一样，可以使用多种方式进行标识。主机的一种标识方法是用它的主机名(hostnamae)，如 cnn.com、<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 等，这些名字便于记忆也乐于被人们接受。然而主机名并没有提供关于主机在因特网中位置的信息，且路由器很难处理这种由不定长字母数字组成的标识，因此主机通常使用具有层次结构的、更易于处理的IP地址进行标识。<br>IP地址有着严格的层次结构，它由4个字节组成，其中的每个字节都被句点分隔开来，表示了0~255的十进制数字，如 121.7.106.83 就是一个IP地址。我们说它具有层次结构是因为当我们从左至右扫描它时，我们会得到越来越具体的关于主机位于因特网何处的信息。<br>人们喜欢便于记忆的主机名标识，而路由器喜欢定长的、有着层次结构的IP地址，为了折衷这些不同的偏好，我们需要一种能进行主机名到IP地址转换的目录服务，这就是<strong>域名系统(Domain Name System, DNS)</strong>。</p>
+        <p>人类能以很多方式来标识，例如我们能够通过出生证明上的名字来标识，能够通过社保卡号码来标识，也能够通过驾驶执照上的号码来标识。<br>因特网上的主机和人类一样，可以使用多种方式进行标识。主机的一种标识方法是用它的主机名(hostnamae)，如 cnn.com、<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 等，这些名字便于记忆也乐于被人们接受。然而主机名并没有提供关于主机在因特网中位置的信息，且路由器很难处理这种由不定长字母数字组成的标识，因此主机通常使用具有层次结构的、更易于处理的IP地址进行标识。<br>IP地址有着严格的层次结构，它由4个字节组成，其中的每个字节都被句点分隔开来，表示了0~255的十进制数字，如 121.7.106.83 就是一个IP地址。我们说它具有层次结构是因为当我们从左至右扫描它时，我们会得到越来越具体的关于主机位于因特网何处的信息。<br>人们喜欢便于记忆的主机名标识，而路由器喜欢定长的、有着层次结构的IP地址，为了折衷这些不同的偏好，我们需要一种能进行主机名到IP地址转换的目录服务，这就是<strong>域名系统(Domain Name System, DNS)</strong>。</p>
 <a id="more"></a>
 <p><br></p>
 <h2 id="DNS提供的服务"><a href="#DNS提供的服务" class="headerlink" title="DNS提供的服务"></a>DNS提供的服务</h2><p>DNS是:</p>
