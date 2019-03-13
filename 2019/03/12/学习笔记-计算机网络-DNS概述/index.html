@@ -92,25 +92,31 @@
 
 
 
-  <meta name="description" content="本文粗略介绍了算术平均数、几何平均数以及调和平均数。 参考文章:  几何平均数和调和平均数是什么？有什么作用？详细资料讨论 MBA智库百科-几何平均数 MBA智库百科-调和平均数 邓卫平. 几何平均数与调和平均数那点儿事[J]. 调研世界, 2013(8):64-65.">
-<meta name="keywords" content="平均数">
+  <meta name="description" content="人类能以很多方式来标识，例如我们能够通过出生证书上的名字来标识，能够通过社会保险号码来标识，也能够通过驾驶执照上的号码来标识。因特网上的主机和人类一样，可以使用多种方式进行标识。主机的一种标识方法是用它的主机名(hostnamae)，如 cnn.com、www.baidu.com 等，这些名字便于记忆也乐于被人们接受。然而主机名并没有提供关于主机在因特网中位置的信息，且路由器很难处理这种由不定长字">
+<meta name="keywords" content="计算机网络,DNS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="毕达哥拉斯平均数">
-<meta property="og:url" content="https://aurora-void.com/2019/03/05/随笔-毕达哥拉斯平均数/index.html">
+<meta property="og:title" content="DNS概述">
+<meta property="og:url" content="https://aurora-void.com/2019/03/12/学习笔记-计算机网络-DNS概述/index.html">
 <meta property="og:site_name" content="BoYu&#39;s Blog">
-<meta property="og:description" content="本文粗略介绍了算术平均数、几何平均数以及调和平均数。 参考文章:  几何平均数和调和平均数是什么？有什么作用？详细资料讨论 MBA智库百科-几何平均数 MBA智库百科-调和平均数 邓卫平. 几何平均数与调和平均数那点儿事[J]. 调研世界, 2013(8):64-65.">
+<meta property="og:description" content="人类能以很多方式来标识，例如我们能够通过出生证书上的名字来标识，能够通过社会保险号码来标识，也能够通过驾驶执照上的号码来标识。因特网上的主机和人类一样，可以使用多种方式进行标识。主机的一种标识方法是用它的主机名(hostnamae)，如 cnn.com、www.baidu.com 等，这些名字便于记忆也乐于被人们接受。然而主机名并没有提供关于主机在因特网中位置的信息，且路由器很难处理这种由不定长字">
 <meta property="og:locale" content="custom">
-<meta property="og:updated_time" content="2019-03-04T16:46:08.000Z">
+<meta property="og:image" content="https://aurora-void.com/2019/03/12/学习笔记-计算机网络-DNS概述/DNS服务器的部分层次结构.jpg">
+<meta property="og:image" content="https://aurora-void.com/2019/03/12/学习笔记-计算机网络-DNS概述/DNS报文格式.jpg">
+<meta property="og:image" content="https://aurora-void.com/2019/03/12/学习笔记-计算机网络-DNS概述/DNS报文-首部区域.jpg">
+<meta property="og:image" content="https://aurora-void.com/2019/03/12/学习笔记-计算机网络-DNS概述/DNS报文-查询区域.jpg">
+<meta property="og:image" content="https://aurora-void.com/2019/03/12/学习笔记-计算机网络-DNS概述/DNS报文-应答区域.jpg">
+<meta property="og:updated_time" content="2019-03-12T07:16:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="毕达哥拉斯平均数">
-<meta name="twitter:description" content="本文粗略介绍了算术平均数、几何平均数以及调和平均数。 参考文章:  几何平均数和调和平均数是什么？有什么作用？详细资料讨论 MBA智库百科-几何平均数 MBA智库百科-调和平均数 邓卫平. 几何平均数与调和平均数那点儿事[J]. 调研世界, 2013(8):64-65.">
+<meta name="twitter:title" content="DNS概述">
+<meta name="twitter:description" content="人类能以很多方式来标识，例如我们能够通过出生证书上的名字来标识，能够通过社会保险号码来标识，也能够通过驾驶执照上的号码来标识。因特网上的主机和人类一样，可以使用多种方式进行标识。主机的一种标识方法是用它的主机名(hostnamae)，如 cnn.com、www.baidu.com 等，这些名字便于记忆也乐于被人们接受。然而主机名并没有提供关于主机在因特网中位置的信息，且路由器很难处理这种由不定长字">
+<meta name="twitter:image" content="https://aurora-void.com/2019/03/12/学习笔记-计算机网络-DNS概述/DNS服务器的部分层次结构.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="https://aurora-void.com/2019/03/05/随笔-毕达哥拉斯平均数/">
+  <link rel="canonical" href="https://aurora-void.com/2019/03/12/学习笔记-计算机网络-DNS概述/">
 
 
 
@@ -120,7 +126,7 @@
   };
 </script>
 
-  <title>毕达哥拉斯平均数 | BoYu's Blog</title>
+  <title>DNS概述 | BoYu's Blog</title>
   
 
 
@@ -369,7 +375,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://aurora-void.com/2019/03/05/随笔-毕达哥拉斯平均数/">
+    <link itemprop="mainEntityOfPage" href="https://aurora-void.com/2019/03/12/学习笔记-计算机网络-DNS概述/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BoYu.Charon">
@@ -386,7 +392,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">毕达哥拉斯平均数
+          <h1 class="post-title" itemprop="name headline">DNS概述
 
               
             
@@ -412,7 +418,7 @@
                 
               
 
-              <time title="Created: 2019-03-05 00:46:08" itemprop="dateCreated datePublished" datetime="2019-03-05T00:46:08+08:00">2019-03-05</time>
+              <time title="Created: 2019-03-12 15:16:38" itemprop="dateCreated datePublished" datetime="2019-03-12T15:16:38+08:00">2019-03-12</time>
             
 
             
@@ -430,7 +436,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/学习笔记/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a></span>
 
                 
                 
@@ -462,55 +468,154 @@
       
 
       
-        <p>本文粗略介绍了算术平均数、几何平均数以及调和平均数。</p>
-<p>参考文章:</p>
-<ul>
-<li><a href="http://www.elecfans.com/d/712572.html" target="_blank" rel="noopener">几何平均数和调和平均数是什么？有什么作用？详细资料讨论</a></li>
-<li><a href="https://wiki.mbalib.com/wiki/%E5%87%A0%E4%BD%95%E5%B9%B3%E5%9D%87%E6%95%B0" target="_blank" rel="noopener">MBA智库百科-几何平均数</a></li>
-<li><a href="https://wiki.mbalib.com/wiki/%E8%B0%83%E5%92%8C%E5%B9%B3%E5%9D%87%E6%95%B0" target="_blank" rel="noopener">MBA智库百科-调和平均数</a></li>
-<li>邓卫平. 几何平均数与调和平均数那点儿事[J]. 调研世界, 2013(8):64-65.</li>
-</ul>
+        <p>人类能以很多方式来标识，例如我们能够通过出生证书上的名字来标识，能够通过社会保险号码来标识，也能够通过驾驶执照上的号码来标识。<br>因特网上的主机和人类一样，可以使用多种方式进行标识。主机的一种标识方法是用它的主机名(hostnamae)，如 cnn.com、<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 等，这些名字便于记忆也乐于被人们接受。然而主机名并没有提供关于主机在因特网中位置的信息，且路由器很难处理这种由不定长字母数字组成的标识，因此主机通常使用具有层次结构的、更易于处理的IP地址进行标识。<br>IP地址有着严格的层次结构，它由4个字节组成，其中的每个字节都被句点分隔开来，表示了0~255的十进制数字，如 121.7.106.83 就是一个IP地址。我们说它具有层次结构是因为当我们从左至右扫描它时，我们会得到越来越具体的关于主机位于因特网何处的信息。<br>人们喜欢便于记忆的主机名标识，而路由器喜欢定长的、有着层次结构的IP地址，为了折衷这些不同的偏好，我们需要一种能进行主机名到IP地址转换的目录服务，这就是<strong>域名系统(Domain Name System, DNS)</strong>。</p>
 <a id="more"></a>
-<hr>
-
-<h2 id="毕达哥拉斯平均数"><a href="#毕达哥拉斯平均数" class="headerlink" title="毕达哥拉斯平均数"></a>毕达哥拉斯平均数</h2><p>平均数是统计学术语，是表示一组数据集中趋势的量数，表明数据集中各数据相对集中较多的中心位置。<br>毕达哥拉斯平均数是算数平均数、几何平均数、调和平均数三类平均数的总称。<br>根据三种平均数各自的计算公式，有调和平均数总是小于几何平均数，几何平均数总是小于算数平均数；特别地，在数据集中所有数据相等时，三种平均数数值相等。</p>
-<h2 id="算术平均数"><a href="#算术平均数" class="headerlink" title="算术平均数"></a>算术平均数</h2><p>在三类平均数中，算术平均数是所有人都接触过的，也是最早接触的。<br>算术平均数又称均值，是统计学中最基本、最常用的一种平均指标。它适用于数据间关系是加的数据集。</p>
-<p>计算公式:<br>$<br>简单算数平均数:<br>\overline{X}<br>= \frac{X_1+X_2+…+X_n}{n}<br>= \frac{\sum_{i=1}^n X_i}{n}<br>\\<br>加权算术平均数:<br>\overline{X}<br>= \frac{ X_1 \times W_1 + X_2 \times W_2 + … + X_n \times W_n }{ W_1+W_2+…+W_n }<br>= \frac{ \sum_{i=1}^n {X_i \times W_i} }{ \sum_{i=1}^n {W_i} }<br>\\<br>以上公式中X_i代表第i项的数值，n为项的总数，W_i为第i项的权重。<br>$</p>
-<p>算术平均数很好理解，将所有的数据相加之后除以数据个数，从而得到了数据的均值。但需要注意，仅当数据集中的数据之间具有加法关系而不存在尺度或比例的变化时，算数平均数才是有意义的；此外，算数平均数易受到极端值的影响，换句话说，极端值会削弱算术平均数对数据集中的数据的集中趋势的代表作用，这也是为什么评分时要“去掉一个最高分和一个最低分”。</p>
-<p><strong>总结</strong></p>
+<p><br></p>
+<h2 id="DNS提供的服务"><a href="#DNS提供的服务" class="headerlink" title="DNS提供的服务"></a>DNS提供的服务</h2><p>DNS是:</p>
 <ol>
-<li>相较于中位数较少受到随机因素的影响  </li>
-<li>较少受到抽样变化的影响  </li>
-<li>其易反应灵敏，易受到极端数据的影响。</li>
+<li>一个由分层的DNS服务器实现的分布式数据库</li>
+<li>一个使得主机能够查询分布式数据库的应用层协议</li>
 </ol>
-<hr>
-
-<font color="gray">之前提到过平均数用来表示一组数据的集中趋势。考虑公比为3、首项为1的等比序列的前7位:1、3、9、27、81、243、729。使用算术平均数时，计算得到该序列额算数平均数近似为156,显然，它并没有反应该序列中7个数据的集中趋势，实际上，该值是这组数据的中位数(27)的5倍多。此时，算术平均数已经不能反应该序列的数据的集中趋势了。下面引入几何平均数:</font>
-
-<h2 id="几何平均数"><a href="#几何平均数" class="headerlink" title="几何平均数"></a>几何平均数</h2><p>几何平均数适用于对比率数据的平均，并主要用于计算数据平均增长(变化)率。<br>几何平均数是n个变量值连乘的积的n次方根。</p>
-<p>计算公式:<br>$<br>简单几何平均数:<br>G<br>= \sqrt[n]{ X_1 \times X_2 \times X_3 \times … \times X_n }<br>= \sqrt[n]{ \prod_{i=1}^n {X_i} }<br>\\<br>加权几何平均数:<br>G<br>= \sqrt[\sum_{i=1}^{n} {W_i}]{ X_1^{W_1} \times X_2^{W_2} \times X_3^{W_3} \times … \times X_n^{W_n} }<br>= \sqrt[\sum_{i=1}^{n} {W_i}]{ \prod_{i=1}^n X_i^{W_i}}<br>\\<br>以上公式中X_i代表第i项的数值，n为项的总数，W_i为第i项的权重。<br>$</p>
-<p>几何平均数适用于具有等比或近似等比关系的数据(如复利问题，计算平均年利率)。它仅能应用于正数，如果数据集中存在0，则几何平均数将恒为0，如果变量值有负值，则计算出的几何平均数就会成为负数或虚数。几何平均数对离散值是不敏感的，这使得它可能会遮蔽具有较大影响的数值，换句话说，它受极端数值的影响较算术平均数小。</p>
-<p>几何平均数的一个特点是它允许我们在不考虑尺度问题的前提下对数据进行比较。例:<br>考虑有两家咖啡店A和B，同时有两个网站对这两家咖啡店进行了评分，其中，网站一使用五分制，网站二使用百分制。。咖啡店A的两个评分分别为4.5(网站一)和68(网站二)，咖啡店B的两个评分分别为3(网站一)和75(网站二)。若我们根据这些数据来比较两家咖啡店的评分，如果使用算数平均数，我们需要先将两个来源的评分转换为同一标准，即将数据转换到统一尺度，再分别计算算数平均值进行比较:<br>$<br>A: ((4.5 \times 20) + 68) \div 2 = 79<br>\\<br>B: ((3 \times 20) + 75) \div 2 = 67.5<br>$<br>显然咖啡店A的口碑优于咖啡店B。<br>然而，如果我们使用几何平均数:<br>$<br>A: \sqrt{4.5 \times 68} = 17.5<br>\\<br>B: \sqrt{3 \times 75} = 15<br>$<br>我们可以在不考虑尺度的前提下直接计算结果并比较，并且能得到同样的结论。但同时需要注意，此时得到的两个几何平均数已经不再具有可解释的尺度了(尺度已经变为原尺度5和100的几何平均数了)，在这样的情况下，几何平均数其实是无单位的。</p>
-<p><strong>总结</strong></p>
+<p><em>注:</em></p>
 <ol>
-<li>适用于具有具有等比或近似等比关系的数据</li>
-<li>几何平均数受极端值的影响较算术平均数小</li>
-<li>仅适用于正数</li>
-<li>应用时可能会丢失有意义的尺度和单位</li>
+<li><em>DNS服务器通常是运行BIND(Berkeley Internet Name Domain)软件的UNIX机器</em></li>
+<li><em>与HTTP、FTP和SMTP一样，DNS协议是应用层协议，该协议运行在UDP之上，使用53号端口</em></li>
 </ol>
-<hr>
+<p>DNS不是一个直接和用户打交道的应用，相反，DNS是为因特网上的用户应用程序以及其他软件提供一种核心功能，即将主机名转换为其背后的IP地址。DNS通过采用了位于网络边缘的客户和服务器实现了关键的名字到地址的转换功能。</p>
+<p>除了进行主机名到IP地址的转换外，DNS还提供了一些重要的服务:</p>
+<ul>
+<li><strong>主机别名</strong>: 有着复杂主机规范的主机能拥有一个或者多个别名。应用程序可以调用DNS来获得主机别名对应的规范主机名以及主机的IP地址。</li>
+<li><strong>邮件服务器别名</strong>: 有着复杂主机规范名的邮件服务器也可拥有多个别名，电子邮件应用程序可以调用DNS对提供的邮件服务器别名进行解析，以获得该主机的规范主机名及其IP地址。</li>
+<li><strong>负载分配</strong>: 繁忙的站点通常被冗余分布在多台服务器上，每台服务器均运行在不同的端系统上，每个都有着不同的IP地址，这些IP地址构成了一个IP地址集合被与同一个规范主机名相联系。当客户对映射到某个地址集合的名字发出一个DNS请求时，DNS服务器用IP地址的整个集合进行响应，但在每次响应中，会循环改变集合中各地址的顺序，由于客户机通常总是向IP地址排在最前面的服务器发送HTTP请求报文，因此DNS就在所有这些冗余的Web服务器之间循环分配了负载。</li>
+</ul>
+<p><br></p>
+<h2 id="DNS工作机理概述"><a href="#DNS工作机理概述" class="headerlink" title="DNS工作机理概述"></a>DNS工作机理概述</h2><h3 id="工作过程概述"><a href="#工作过程概述" class="headerlink" title="工作过程概述"></a>工作过程概述</h3><p>从用户主机上调用应用程序的角度来看，DNS是一个提供简单、直接的转换服务的黑盒子: 当用户主机上的某些应用程序需要将主机名转换为IP地址时，这些应用程序将调用位于用户主机上的DNS客户端，并指明需要被转换的主机名，DNS客户端会向网络中发送一个DNS查询报文，经过若干毫秒到若干秒的时延后，用户主机上的DNS会接收到一个提供所希望映射的DNS回答报文，这个映射结果会被传递到调用DNS的应用程序。</p>
+<h3 id="分布式、层次数据库"><a href="#分布式、层次数据库" class="headerlink" title="分布式、层次数据库"></a>分布式、层次数据库</h3><p>显而易见，对于遍布全球的互联网来说，只使用一个DNS服务器来说是不合理也是不现实的，因为这种集中式设计存在单点故障会导致整个互联网的DNS服务中断、通信容量限制、远距离带来的低速与拥塞、维护困难、不可扩展等诸多问题。因此，DNS采用了分布式的设计方案，事实上DNS是一个在因特网上实现分布式数据库的精彩范例。</p>
+<p>为了处理扩展性问题，DNS使用了大量的DNS服务器，它们以层次方式组织，并且分布在全世界范围内。没有一台DNS服务器拥有因特网上所有主机的映射。相反，该映射分布在所有的DNS服务器上。</p>
+<center><br><img src="DNS服务器的部分层次结构.jpg" width="80%" height="80%" alt="DNS服务器的部分层次结构"><br>DNS服务器的部分层次结构<br></center>
 
-<h2 id="调和平均数"><a href="#调和平均数" class="headerlink" title="调和平均数"></a>调和平均数</h2><p><blockquote><em>&lt;邓卫平. 几何平均数与调和平均数那点儿事[J]. 调研世界, 2013(8):64-65.&gt;</em><br>调和何意？调和是什么?怎么调和?<br>调和平均数对应的英文是harmonic mean，其实用英文名词也不是说它就是源头，只不过我们呢比较熟悉而已。调和的概念来源于古希腊的毕达哥拉斯学派研究数字时发现的音乐属性，如果取三根琴弦，其长度分别为10、12、15，用同样的力弹拨这三根绷的一样紧的琴弦，他们将会分别发出很协和的乐声(协和是音乐界对harmony的翻译术语，而其在数学中被译为了调和，不同的领域对同一个引入的外国词汇有不同的翻译，这也是后发者的无奈吧)，研究他们的弦长发时发现:$\frac{1}{10}-\frac{1}{12}=\frac{1}{12}-\frac{1}{15}$，这就是被认为是协和乐音的数学机理了，变形可得$\frac{1}{12}=\frac{1}{2}(\frac{1}{10}+\frac{1}{15})$，这是一种新的平均形式，且称12为10和15的调和平均数。更一般的，调和平均数可定义为n个数的倒数的算数平均数的倒数，即$\frac{1}{a}=\frac{1}{n}(\frac{1}{a_1}+\frac{1}{a_2}+…+\frac{1}{a_n})$，a为$a_1,a_2…a_n$的调和平均数。<br></blockquote><br></p>
-<p>算数平均数需要加法，几何平均数则利用乘法，调和平均数使用倒数。<br>调和平均数又称倒数平均数，是所给数据集的倒数的算数平均数的倒数。  </p>
-<p>计算公式:<br>$<br>简单调和平均数:<br>H<br>= \frac{1}{\frac{1}{n} \times (\frac{1}{X_1}+\frac{1}{X_2}+\frac{1}{X_3}+…+\frac{1}{X_n})}<br>= \frac{1}{\frac{1}{n} \times \sum_{i=1}^n \frac{1}{X_i}}<br>= \frac{n}{\sum_{i=1}^{n} \frac{1}{X_i}}<br>\\<br>加权调和平均数:<br>H<br>= \frac{1}{\frac{1}{W_1+W_2+…+W_n} \times (\frac{W_1}{X_1}+\frac{W_2}{X_2}+…+\frac{W_n}{X_n})}<br>= \frac{1}{\frac{1}{\sum_{i=1}^n W_i} \times \sum_{i=1}^n \frac{W_i}{X_i}}<br>= \frac{\sum_{i=1}^n W_i}{\sum_{i=1}^n \frac{W_i}{X_i}}<br>$</p>
-<p>调和平均数常作为算数平均数的变形来使用，与算数平均数相似，调和平均数易受极端值的影响，且受极小值的影响比受极大值的影响更大。由于其包含倒数部分，因此不能对存在0的数据集使用调和平均数。</p>
-<p>调和平均数应用范围较小，在实际中，往往由于缺乏总体单位数的资料(已知分子资料缺分母资料)而不能直接计算算数平均数，这时需要用调和平均数。例:<br>考虑有A、B两地，你从A地前往B地办事，去程速度为30km/h，事情处理完毕后你返回A地，返程的速度为10km/h，求你在A、B两地间往返的平均速度。常规计算方案为设从A地到B地距离为$Lkm$，则从A地到B地用时为$\frac{L}{30}$，从B地到A地用时为$\frac{L}{10}$，平均速度为总路径除以总用时，即$\frac{2L}{\frac{L}{30} + \frac{L}{10}} = 15$。直接使用调和平均数，有$\frac{1}{\frac{1}{2} \times (\frac{1}{30} + \frac{1}{10})} = 15$。  </p>
-<p><strong>总结</strong></p>
-<ol>
-<li>易受极端值的影响，受极小值的影响比受极大值的影响更大</li>
-<li>不能应用于含有0的数据集</li>
-<li>多用于已知分子资料，缺分母资料的情况</li>
-</ol>
+<p>大致来说，有3种类型的DNS服务器:</p>
+<ul>
+<li><strong>根DNS服务器</strong>: 根DNS服务器负责管理互联网的主目录，它维护所有顶级域(DNS)服务器的IP地址。(全世界共有13台根DNS服务器，分为1台主根服务器(美国)和12台辅根服务器(美国9台、英国1台、瑞典1台、日本1台)。</li>
+<li><strong>顶级域(Top-Level Domain, TLD)DNS服务器</strong>: 顶级域(DNS)服务器维护顶级域名(如com、org、edu等)以及所有国家的顶级域名(如cn、uk、jp等)下的权威DNS服务器的IP地址。(注意一台服务器仅负责解析一个顶级域名下的全权威DNS服务器IP地址)</li>
+<li><strong>权威DNS服务器</strong>: 权威DNS服务器负责某顶级域名下的子域的解析工作。在因特网上具有公共可访问主机的每个组织机构必须提供公共可访问的DNS记录，这些记录将这些主机的名字映射为IP地址，一个组织机构的权威DNS服务器收藏了这些DNS记录组织机构可以选择实现自己的权威DNS服务器或者支付费用将这些记录存储在某个服务提供商的权威DNS服务器中。(权威服务器实际上也可以具有一定的层次结构，如某顶级域名的二级域名的权威DNS服务器下可能存在多个三级域名的权威DNS服务器)</li>
+</ul>
+<p>(注:每台服务器实际上是一个冗余服务器的网络，以提供安全性和可靠性。)</p>
+<p>假定一个DNS客户要决定主机名为 <a href="http://www.amazon.com" target="_blank" rel="noopener">www.amazon.com</a> 的主机的IP地址，粗略来说，将发生下列事件: 客户首先与根服务器之一联系，它将返回顶级域名com的TLD服务器的IP地址，接着该客户与这些TLD服务器之一联系，它将为 amazon.com 返回权威服务器的IP地址，最后客户与 amazon.com 的权威服务器之一联系，它为主机名 <a href="http://www.amazon.com" target="_blank" rel="noopener">www.amazon.com</a> 返回其IP地址。</p>
+<p>除了这3类DNS服务器外，还有另一类重要的DNS服务器，称为<strong>本地DNS服务器(local DNS server)</strong>。一个本地DNS服务器严格来说并不属于DNS服务器的层次结构，但它对DNS服务器的层次结构来说是重要的。每个ISP(网络提供者)都有一台本地DNS服务器，当主机与某个ISP连接时，该ISP提供一台主机的IP地址，该主机具有一台或多台其本地DNS服务器的IP地址。当主机发送DNS请求时，该请求被发往本地DNS服务器，本地DNS服务器起着代理的作用，由它负责与各层DNS服务器进行交互并最终将查询结果返回客户主机。</p>
+<p>对DNS查询请求的处理方式一般有<strong>递归查询(recursive query)</strong>和<strong>迭代查询(iterative query)</strong>两种。<br>递归查询是指一台主机发起一个DNS查询请求，每台受到该请求的服务器在查询到下一级服务器的IP地址后不返回而是递归性地将该查询转发到检索到的服务器上，逐一”深入”，最后逐层返回。<br>迭代查询是指一台主机向一台服务器发起一个DNS查询，服务器在收到查询请求后直接返回检索到的下一级服务器的IP地址而不递归发送查询请求，在主机受到下一级服务器的IP地址后，由主机自行向返回的下一级服务器发送查询请求，不断迭代，直到主机最终受到某权威服务器的IP地址并在发送请求后受到了最终的IP地址。<br>从理论上讲，任何DNS查询既可以是迭代的也可以是递归的。实践中，查询通常遵循以下模式:从请求主机到本地DNS服务器的查询是递归的，其余的查询是迭代的。</p>
+<h3 id="DNS缓存"><a href="#DNS缓存" class="headerlink" title="DNS缓存"></a>DNS缓存</h3><p>通过上述的介绍，我们可以看出，当一台主机发送一个DNS查询请求时，该请求将会涉及到至少4个服务器(本地DNS服务器、根DNS服务器、顶级域DNS服务器以及权威DNS服务器)、包含至少8次的DNS报文的发送(与每台服务器的请求交互至少涉及到一次发送和一次返回两个DNS报文)，可以预测出该查询带来的延迟将是相当可观的。实际上，为了改善时延性能并减少因特网上到处传输的DNS报文数量，DNS广泛使用了缓存的技术。</p>
+<p>DNS缓存的原理非常简单，在一个请求链中，当某DNS服务器接收到了一个DNS回答时，它能将该回答中的信息缓存在本地服务器中，如果在DNS服务器中缓存了一台主机名/IP地址对，而另一个对相同主机名的查询到达该DNS服务器时，该DNS服务器就能够提供相应的所要求的IP地址，即使它不是该所要求的主机名的权威服务器。</p>
+<p>由于主机和主机名与IP地址间的映射并不是永久的，对于每条被缓存的主机名/IP地址对均有一个<strong>TTL(Time-To-Live)</strong>字段，该字段随时间减小，当某一条缓存的TTL减小为零时，该缓存信息将被丢弃。TTL时间一般由被查询主机名的权威服务器在返回查询结果时连同发送。</p>
+<p><br></p>
+<h2 id="DNS记录和报文"><a href="#DNS记录和报文" class="headerlink" title="DNS记录和报文"></a>DNS记录和报文</h2><h3 id="资源记录-RR"><a href="#资源记录-RR" class="headerlink" title="资源记录(RR)"></a>资源记录(RR)</h3><p>共同实现DNS分布式数据库的所有DNS服务器存储了<strong>资源记录(Resource Record, RR)</strong>，资源记录提供了主机名到IP地址的映射。每个DNS回答报文包含了一条或多条资源记录。</p>
+<p>资源记录是一个包含了下列字段的4元组:<br><code>(Name, Value, Type, TTL)</code><br>各字段的含义如下:</p>
+<ul>
+<li><strong>Name</strong>: 记录的名称或记录所有者的名称。可以是根域名(@)或子域名(如www)。</li>
+<li><strong>Value</strong>: 记录的数据，具体含义随记录的类型变化，如当记录的类型为A时，该字段存储的是主机的IPv4地址。</li>
+<li><strong>Type</strong>: 记录的类型,如A表示一条IPv4地址记录。</li>
+<li><strong>TTL</strong>: 该条记录的缓存失效时间，注意，该数值并不是恒定的，它会随时间减小，当期减小为零时，该条记录失效。</li>
+</ul>
+<p>Name字段部分取值及含义:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">取值</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">@</td>
+<td style="text-align:left">直接解析主域名，如example.com</td>
+</tr>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">泛解析，匹配所有其他二级域名，*.example.com</td>
+</tr>
+<tr>
+<td style="text-align:left">二级域名</td>
+<td style="text-align:left">解析以字段值为二级域名的域名。如字段值为www，则解析<a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a></td>
+</tr>
+</tbody>
+</table>
+<p>Type字段部分取值及含义:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">取值</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">A</td>
+<td style="text-align:left">表明该记录为一条IPv4地址记录</td>
+</tr>
+<tr>
+<td style="text-align:left">AAAA</td>
+<td style="text-align:left">表明该记录为一条Ipv6地址记录</td>
+</tr>
+<tr>
+<td style="text-align:left">CNAME</td>
+<td style="text-align:left">表明该记录将域名指向另一个域名</td>
+</tr>
+<tr>
+<td style="text-align:left">MX</td>
+<td style="text-align:left">表明该记录为邮件传输代理地址记录</td>
+</tr>
+<tr>
+<td style="text-align:left">SRV</td>
+<td style="text-align:left">表明该记录为服务定位记录</td>
+</tr>
+<tr>
+<td style="text-align:left">NS</td>
+<td style="text-align:left">表明该记录为域名服务器记录</td>
+</tr>
+<tr>
+<td style="text-align:left">TXT</td>
+<td style="text-align:left">指明该记录是文本记录(绝大多数用来做SPF记录，反垃圾邮件)</td>
+</tr>
+</tbody>
+</table>
+<p>关于更对Type类型及各类型下记录的示例可以参考以下连接:<br><a href="https://support.google.com/domains/answer/3251147?hl=en" target="_blank" rel="noopener">Google Domains Help - About resource records</a><br><a href="https://zh.wikipedia.org/wiki/域名伺服器記錄類型列表#記錄類型" target="_blank" rel="noopener">维基百科 - 域名服务器记录类型列表</a></p>
+<h3 id="DNS报文"><a href="#DNS报文" class="headerlink" title="DNS报文"></a>DNS报文</h3><p>DNS报文分为查询报文和回答报文，DNS只有这两种报文，且查询报文和回答报文具有相同的格式。格式如下:</p>
+<center><br><img src="DNS报文格式.jpg" width="80%" alt="DNS报文格式"><br>DNS报文格式<br></center>
+
+<p>DNS报文中，各区域的说明如下:</p>
+<h4 id="首部区域"><a href="#首部区域" class="headerlink" title="首部区域"></a>首部区域</h4><p>DNS报文中，前12个字节是首部区域，该区域包含如下内容:<br><img src="DNS报文-首部区域.jpg" width="100%" alt="DNS报文格式"><br>各部分的含义为:</p>
+<ul>
+<li><strong>标识符(ID)</strong>: 标识符是一个16比特的数，用于标识该查询，这个标识符会被复制到对查询的回答报文中，以便让客户用它来匹配发送的请求和接受到的回答</li>
+<li><strong>查询/回答标志位(QR)</strong>: 1比特的查询/回答标志位指出该报文是查询报文(0)还是回答报文(1)</li>
+<li><strong>查询种类标志(Opcode)</strong>: 该标志用于表明查询的种类，应答的时候会带有相同的值，其中0代表标准查询、1代表反向查询、2代表服务器状态查询、3-15为保留值暂未使用</li>
+<li><strong>权威标志位(Authoritative Answer, AA)</strong>: 当某DNS服务器是锁清名字的权威DNS服务器时，该标志位将被置位</li>
+<li><strong>截断标志位(TrunCated, TC)</strong>: 用来表明报文是否被截断，当报文无法被UDP报文容纳下时(报文的大小超过512字节)，该报文会被截断</li>
+<li><strong>希望递归标志位(Recursion Desired, RD)</strong>: 如果客户(主机或DNS服务器)在该DNS服务器没有某条记录时希望它执行递归查询，将设置1比特的希望递归标志位</li>
+<li><strong>递归可用标志位(Recursion Available, RA)</strong>: 如果该DNS服务器支持递归查询，在它的回答报文中会对1比特的递归可用标志位进行置位</li>
+<li><strong>零(Zero)</strong>: 全部被置为0的保留部分，暂未使用</li>
+<li><strong>应答码(ReplyCODE, RCODE)</strong>: 用来表示存在的错误，0表示没有错误、1表示报文格式错误(服务器不能理解请求的报文)、2表示服务器失败、3表示名字错误(解析的域名不存在)、4表示没有实现(服务器不支持该查询类型)、5表示拒绝(服务器拒绝应答)、6-15为保留值暂未使用</li>
+<li><strong>问题记录数(QDCOUNT)</strong>: 表示问题部分的记录数</li>
+<li><strong>回答记录数(ANCOUNT)</strong>: 表示回答部分的记录数</li>
+<li><strong>权威记录数(NSCOUNT)</strong>: 表示权威部分的记录数</li>
+<li><strong>附加记录数(ARCOUNT)</strong>: 表示附加部分的记录数</li>
+</ul>
+<h4 id="查询区域"><a href="#查询区域" class="headerlink" title="查询区域"></a>查询区域</h4><p>查询区域指问题部分，该区域包含着正在进行的查询信息。当一个DNS报文是查询报文时，它就会包含该区域。该区域的记录的格式如下:<br><img src="DNS报文-查询区域.jpg" width="100%" alt="DNS报文格式"><br>各部分的含义为:</p>
+<ul>
+<li><strong>查询名(Name)</strong>: 指要进行查询的名字，通常是域名，当查询方式为反向查询时则为IP地址</li>
+<li><strong>查询类型(Type)</strong>: 指要查询的类型，该类型对应于资源记录类型</li>
+<li><strong>查询类(Class)</strong>: 指明查询的类，对于Internet来说一般为IN</li>
+</ul>
+<h4 id="应答区域"><a href="#应答区域" class="headerlink" title="应答区域"></a>应答区域</h4><p>应答区域指回答部分、权威部分以及附加信息部分。当一个DNS报文是回答报文时，它就会包含该区域。该区域的记录的格式如下:<br><img src="DNS报文-应答区域.jpg" width="100%" alt="DNS报文格式"><br>各部分的含义为:</p>
+<ul>
+<li><strong>名称(Name)</strong>: 同查询名，通常是域名</li>
+<li><strong>类型(Type)</strong>: 同查询类型，对应资源记录的类型</li>
+<li><strong>类(Class)</strong>: 同查询类，对于Internet来说一般为IN</li>
+<li><strong>生存时间(TTL)</strong>: 如前所述，表明该记录的缓存有效期</li>
+<li><strong>数据长度(Data Length)</strong>: 表明数据部分的长度</li>
+<li><strong>数据(Data)</strong>: 存放资源记录的具体数据，比如对于A类型的资源记录，其数据部分存放的就是其IPv4地址</li>
+</ul>
+<p><strong>附</strong></p>
+<p>DNS报文部分我参考了以下文章，推荐阅读:<br><a href="https://blog.csdn.net/liao152/article/details/45252387" target="_blank" rel="noopener">深入理解DNS报文格式-夜苍山-CSDN博客</a><br><a href="http://www.keyboardbanger.com/dns-message-format-name-compression/" target="_blank" rel="noopener">DNS Message Format And Name Compression - Keyboard Banger</a></p>
 
       
     </div>
@@ -534,7 +639,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/平均数/" rel="tag"># 平均数</a>
+            <a href="/tags/计算机网络/" rel="tag"># 计算机网络</a>
+          
+            <a href="/tags/DNS/" rel="tag"># DNS</a>
           
         </div>
       
@@ -547,8 +654,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/12/解决方案-Linux下MySQL问题/" rel="next" title="Linux下MySQL问题">
-                <i class="fa fa-chevron-left"></i> Linux下MySQL问题
+              <a href="/2019/03/05/随笔-毕达哥拉斯平均数/" rel="next" title="毕达哥拉斯平均数">
+                <i class="fa fa-chevron-left"></i> 毕达哥拉斯平均数
               </a>
             
           </div>
@@ -556,10 +663,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/12/学习笔记-计算机网络-DNS概述/" rel="prev" title="DNS概述">
-                DNS概述 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -764,7 +867,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#毕达哥拉斯平均数"><span class="nav-number">1.</span> <span class="nav-text">毕达哥拉斯平均数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算术平均数"><span class="nav-number">2.</span> <span class="nav-text">算术平均数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#几何平均数"><span class="nav-number">3.</span> <span class="nav-text">几何平均数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调和平均数"><span class="nav-number">4.</span> <span class="nav-text">调和平均数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS提供的服务"><span class="nav-number">1.</span> <span class="nav-text">DNS提供的服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS工作机理概述"><span class="nav-number">2.</span> <span class="nav-text">DNS工作机理概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工作过程概述"><span class="nav-number">2.1.</span> <span class="nav-text">工作过程概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式、层次数据库"><span class="nav-number">2.2.</span> <span class="nav-text">分布式、层次数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS缓存"><span class="nav-number">2.3.</span> <span class="nav-text">DNS缓存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS记录和报文"><span class="nav-number">3.</span> <span class="nav-text">DNS记录和报文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#资源记录-RR"><span class="nav-number">3.1.</span> <span class="nav-text">资源记录(RR)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS报文"><span class="nav-number">3.2.</span> <span class="nav-text">DNS报文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#首部区域"><span class="nav-number">3.2.1.</span> <span class="nav-text">首部区域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询区域"><span class="nav-number">3.2.2.</span> <span class="nav-text">查询区域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应答区域"><span class="nav-number">3.2.3.</span> <span class="nav-text">应答区域</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1253,53 +1356,6 @@
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-      for (i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-<style>
-.MathJax_Display {
-  overflow-x: scroll;
-  overflow-y: hidden;
-}
-</style>
-
-    
   
 
 
