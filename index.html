@@ -365,6 +365,169 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://aurora-void.com/2019/03/26/学习笔记-编译原理-DFA转NFA与DFA最小化/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="BoYu.Charon">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BoYu's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/03/26/学习笔记-编译原理-DFA转NFA与DFA最小化/" class="post-title-link" itemprop="url">NFA转DFA与DFA最小化(实验记录, 含java源码)</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-03-26 22:38:51" itemprop="dateCreated datePublished" datetime="2019-03-26T22:38:51+08:00">2019-03-26</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/学习笔记/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>最近进行了编译原理的实验，实验的内容如标题所述，分为“将输入的NFA(不确定有穷自动机)转换为DFA(确定的有穷自动机)”以及“将输入的DFA最小化”两个部分。实验结束后，我对实验的相关信息进行了整理，总结出了这篇记录。本记录包含了实验说明、DFA转NFA以及DFA最小化的方法(实验原理)、java源码、以及若干输入输出样例。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/26/学习笔记-编译原理-DFA转NFA与DFA最小化/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://aurora-void.com/2019/03/12/学习笔记-计算机网络-DNS概述/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -436,6 +599,9 @@
             </span>
           
 
+          
+            
+            
           
 
           
@@ -596,6 +762,9 @@
             </span>
           
 
+          
+            
+            
           
 
           
@@ -764,6 +933,9 @@
           
 
           
+            
+            
+          
 
           
           
@@ -886,7 +1058,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -928,7 +1100,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -973,7 +1147,7 @@
             <div class="links-of-blogroll motion-element links-of-blogroll-inline">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-link"></i>
-                快速工具
+                Tools & Blogroll
               </div>
               <ul class="links-of-blogroll-list">
                 
@@ -1495,6 +1669,8 @@
       
     
       
+    
+      
         
       
     
@@ -1571,6 +1747,94 @@
   
 
   
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      var $icon = '<i class="fa  fa-fw fa-copy"></i>&nbsp;';
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append($icon + 'Copy').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.getElementById('hidden-copy-textarea');
+        if(!ta)
+        {
+          ta = document.createElement('textarea');
+          ta.setAttribute('id','hidden-copy-textarea');
+          var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+          ta.style.top = yPosition + 'px'; //Prevent page scroll
+          ta.style.position = 'absolute';
+          ta.style.opacity = '0';
+          ta.style.cursor = 'default';
+          ta.contentEditable = true;
+          ta.readOnly = false;
+        }
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).html('<text>Copied</text>');
+          else $(this).html('<text>Copy failed</text>');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.html($icon + '<text>Copy</text>');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
 
 </body>
 </html>
