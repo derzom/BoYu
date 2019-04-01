@@ -92,13 +92,13 @@
 
 
 
-  <meta name="description" content="最近进行了编译原理的实验，实验的内容如标题所述，分为“将输入的NFA(不确定有穷自动机)转换为DFA(确定的有穷自动机)”以及“将输入的DFA最小化”两个部分。实验结束后，我对实验的相关信息进行了整理，总结出了这篇记录。本记录包含了实验说明、DFA转NFA以及DFA最小化的方法(实验原理)、java源码、以及若干输入输出样例。">
+  <meta name="description" content="最近进行了编译原理的实验，实验的内容如标题所述，分为“将输入的NFA(不确定有穷自动机)转换为DFA(确定的有穷自动机)”以及“将输入的DFA最小化”两个部分。实验结束后，我对实验的相关信息进行了整理，总结出了这篇记录。本记录包含了实验说明、NFA转DFA以及DFA最小化的方法(实验原理)、java源码、以及若干输入输出样例。">
 <meta name="keywords" content="编译原理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NFA转DFA与DFA最小化(实验记录, 含java源码)">
 <meta property="og:url" content="https://aurora-void.com/2019/03/26/学习笔记-编译原理-DFA转NFA与DFA最小化/index.html">
 <meta property="og:site_name" content="BoYu&#39;s Blog">
-<meta property="og:description" content="最近进行了编译原理的实验，实验的内容如标题所述，分为“将输入的NFA(不确定有穷自动机)转换为DFA(确定的有穷自动机)”以及“将输入的DFA最小化”两个部分。实验结束后，我对实验的相关信息进行了整理，总结出了这篇记录。本记录包含了实验说明、DFA转NFA以及DFA最小化的方法(实验原理)、java源码、以及若干输入输出样例。">
+<meta property="og:description" content="最近进行了编译原理的实验，实验的内容如标题所述，分为“将输入的NFA(不确定有穷自动机)转换为DFA(确定的有穷自动机)”以及“将输入的DFA最小化”两个部分。实验结束后，我对实验的相关信息进行了整理，总结出了这篇记录。本记录包含了实验说明、NFA转DFA以及DFA最小化的方法(实验原理)、java源码、以及若干输入输出样例。">
 <meta property="og:locale" content="custom">
 <meta property="og:image" content="https://aurora-void.com/2019/03/26/学习笔记-编译原理-DFA转NFA与DFA最小化/InputExample.jpg">
 <meta property="og:image" content="https://aurora-void.com/2019/03/26/学习笔记-编译原理-DFA转NFA与DFA最小化/N2D1.jpg">
@@ -122,7 +122,7 @@
 <meta property="og:updated_time" content="2019-03-26T14:38:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NFA转DFA与DFA最小化(实验记录, 含java源码)">
-<meta name="twitter:description" content="最近进行了编译原理的实验，实验的内容如标题所述，分为“将输入的NFA(不确定有穷自动机)转换为DFA(确定的有穷自动机)”以及“将输入的DFA最小化”两个部分。实验结束后，我对实验的相关信息进行了整理，总结出了这篇记录。本记录包含了实验说明、DFA转NFA以及DFA最小化的方法(实验原理)、java源码、以及若干输入输出样例。">
+<meta name="twitter:description" content="最近进行了编译原理的实验，实验的内容如标题所述，分为“将输入的NFA(不确定有穷自动机)转换为DFA(确定的有穷自动机)”以及“将输入的DFA最小化”两个部分。实验结束后，我对实验的相关信息进行了整理，总结出了这篇记录。本记录包含了实验说明、NFA转DFA以及DFA最小化的方法(实验原理)、java源码、以及若干输入输出样例。">
 <meta name="twitter:image" content="https://aurora-void.com/2019/03/26/学习笔记-编译原理-DFA转NFA与DFA最小化/InputExample.jpg">
 
 
@@ -485,7 +485,7 @@
       
 
       
-        <p>最近进行了编译原理的实验，实验的内容如标题所述，分为“将输入的NFA(不确定有穷自动机)转换为DFA(确定的有穷自动机)”以及“将输入的DFA最小化”两个部分。实验结束后，我对实验的相关信息进行了整理，总结出了这篇记录。本记录包含了实验说明、DFA转NFA以及DFA最小化的方法(实验原理)、java源码、以及若干输入输出样例。</p>
+        <p>最近进行了编译原理的实验，实验的内容如标题所述，分为“将输入的NFA(不确定有穷自动机)转换为DFA(确定的有穷自动机)”以及“将输入的DFA最小化”两个部分。实验结束后，我对实验的相关信息进行了整理，总结出了这篇记录。本记录包含了实验说明、NFA转DFA以及DFA最小化的方法(实验原理)、java源码、以及若干输入输出样例。</p>
 <a id="more"></a>
 <h1 id="实验说明"><a href="#实验说明" class="headerlink" title="实验说明"></a>实验说明</h1><h2 id="试验内容"><a href="#试验内容" class="headerlink" title="试验内容"></a>试验内容</h2><p>实验分为以下两个部分:</p>
 <ol>
@@ -981,11 +981,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
