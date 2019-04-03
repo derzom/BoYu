@@ -528,171 +528,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://aurora-void.com/2019/03/23/算法-KMP子字符串匹配算法/算法-KMP子字符串匹配算法/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="BoYu.Charon">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/avatar.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BoYu's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/23/算法-KMP子字符串匹配算法/算法-KMP子字符串匹配算法/" class="post-title-link" itemprop="url">算法-KMP子字符串匹配算法</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-03-23 23:49:58" itemprop="dateCreated datePublished" datetime="2019-03-23T23:49:58+08:00">2019-03-23</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>KMP算法是一种改进的字符串匹配算法，由D.E.Knuth、J.H.Morris和V.R.Pratt同时发现，因此人们称它为克努特——莫里斯——普拉特操作(简称KMP算法)。KMP算法的关键是利用匹配失败后的信息，尽量减少模式串与主串的匹配次数以达到快速匹配的目的。具体实现就是实现一个next数组，数组本身包含了模式串的局部匹配信息。时间复杂度O(m+n)。</p>
-<hr>
-<p>很久之前，在我还在学数据结构的时候，看过一次KMP算法，当初看的是云里雾里，在勉强看懂了之后就没有再关注了。最近在做一道编译原理的习题时，偶然又看到了KMP算法，当时脑子里只有一个想法，卧槽，好熟悉的名字，但是就是记不起来怎么玩的了…后来，在百度找了几篇讲KMP算法的文章，又找到了当初云里雾里的感觉，愣是没一篇能让我彻底看明白…</p>
-<p><img src="玩你妈-一群垃圾-带不动老子.jpg" width="50%" alt="玩你妈-一群垃圾-带不动老子"></p>
-<font color="gray">(开个玩笑XD)</font>
-
-<p>于是，我又浪费了几个小时研究KMP算法的代码，终于在我自认为看懂了的情况下，决定赶快写一篇肤浅但“通俗易懂”的文章记一下别又忘了…</p>
-<p>首先，先说一下子字符串的匹配吧，想一下，现在有一个字符串，要让你确定里面是否包含一个字符串片段，如果包含的话就指明它第一次出现的起始位置，你会怎么做？</p>
-<p>想当年我还是大一的时候，反手就是一串简单粗暴的代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">subString</span><span class="params">(<span class="built_in">string</span> mainLine, <span class="built_in">string</span> subLine)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> checkLen = mainLine.length() - subLine.length();</span><br><span class="line">    <span class="keyword">int</span> subLen = subLine.length();</span><br><span class="line">    <span class="keyword">int</span> matchLen = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= checkLen; i++) <span class="comment">//依次从每个字符开始匹配</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (matchLen = <span class="number">0</span>; matchLen &lt; subLen; matchLen++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (mainLine[i+matchLen] != subLine[matchLen])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (matchLen &gt;= subLen)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>理解起来相当简单，暴力匹配，使用要匹配的字符串片段依次从主串的每一位开始匹配，匹配到了就返回位置，否则继续。<br>也就是下面这个示例：<br>考虑在串abcdabce中查找字符串abce，会有以下的匹配过程：</p>
-<p><img src="示例-abcdabce-abce.jpg" alt="示例-abcdabce-abce"></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://aurora-void.com/2019/03/12/学习笔记-计算机网络-DNS概述/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1223,7 +1058,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1242,9 +1077,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -1265,9 +1098,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -1830,8 +1661,6 @@
 
   
   
-    
-      
     
       
     
