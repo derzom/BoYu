@@ -591,7 +591,7 @@
 <li><strong>标识符(ID)</strong>: 标识符是一个16比特的数，用于标识该查询，这个标识符会被复制到对查询的回答报文中，以便让客户用它来匹配发送的请求和接受到的回答</li>
 <li><strong>查询/回答标志位(QR)</strong>: 1比特的查询/回答标志位指出该报文是查询报文(0)还是回答报文(1)</li>
 <li><strong>查询种类标志(Opcode)</strong>: 该标志用于表明查询的种类，应答的时候会带有相同的值，其中0代表标准查询、1代表反向查询、2代表服务器状态查询、3-15为保留值暂未使用</li>
-<li><strong>权威标志位(Authoritative Answer, AA)</strong>: 当某DNS服务器是锁清名字的权威DNS服务器时，该标志位将被置位</li>
+<li><strong>权威标志位(Authoritative Answer, AA)</strong>: 当某DNS服务器是所请求的名字的权威DNS服务器时，该标志位将被置位</li>
 <li><strong>截断标志位(TrunCated, TC)</strong>: 用来表明报文是否被截断，当报文无法被UDP报文容纳下时(报文的大小超过512字节)，该报文会被截断</li>
 <li><strong>希望递归标志位(Recursion Desired, RD)</strong>: 如果客户(主机或DNS服务器)在该DNS服务器没有某条记录时希望它执行递归查询，将设置1比特的希望递归标志位</li>
 <li><strong>递归可用标志位(Recursion Available, RA)</strong>: 如果该DNS服务器支持递归查询，在它的回答报文中会对1比特的递归可用标志位进行置位</li>
@@ -810,7 +810,7 @@
                   
                     
                   
-                  <a href="mailto:cby1998722@gmail.com" title="G-Mail &rarr; mailto:cby1998722@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>G-Mail</a>
+                  <a href="mailto:boyu.charon@gmail.com" title="G-Mail &rarr; mailto:boyu.charon@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>G-Mail</a>
                 </span>
               
             </div>
