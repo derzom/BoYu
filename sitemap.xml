@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://aurora-void.com/about/index.html</loc>
+    
+    <lastmod>2019-05-07T13:22:22.032Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://aurora-void.com/2019/03/26/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-NFA%E8%BD%ACDFA%E4%B8%8EDFA%E6%9C%80%E5%B0%8F%E5%8C%96/</loc>
     
     <lastmod>2019-03-26T14:38:51.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://aurora-void.com/2019/03/12/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-DNS%E6%A6%82%E8%BF%B0/</loc>
     
     <lastmod>2019-03-12T07:16:38.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://aurora-void.com/about/index.html</loc>
-    
-    <lastmod>2019-03-05T08:47:10.386Z</lastmod>
     
   </url>
   
