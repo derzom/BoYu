@@ -92,13 +92,13 @@
 
 
 
-  <meta name="description" content="前端时间在学习机器学习神经网络这一章节，查了一些资料，手推了下误差逆传播算法，感觉比较了解了，参考了大佬的代码，也用Python写了一个简单的单隐层BP网络，正好今天有点时间，记录一下代码，也顺便对误差逆传播算法进行了较为通俗的描述。">
+  <meta name="description" content="前段时间在学习机器学习神经网络这一章节，查了一些资料，手推了下误差逆传播算法，感觉比较了解了，参考了大佬的代码，也用Python写了一个简单的单隐层BP网络，正好今天有点时间，就记录了下误差逆传播算法和单层BP网络的Python实现。">
 <meta name="keywords" content="机器学习,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="误差逆传播算法及Python实现">
 <meta property="og:url" content="https://aurora-void.com/2019/12/03/学习笔记-机器学习-误差逆传播算法及Python实现/index.html">
 <meta property="og:site_name" content="BoYu&#39;s Blog">
-<meta property="og:description" content="前端时间在学习机器学习神经网络这一章节，查了一些资料，手推了下误差逆传播算法，感觉比较了解了，参考了大佬的代码，也用Python写了一个简单的单隐层BP网络，正好今天有点时间，记录一下代码，也顺便对误差逆传播算法进行了较为通俗的描述。">
+<meta property="og:description" content="前段时间在学习机器学习神经网络这一章节，查了一些资料，手推了下误差逆传播算法，感觉比较了解了，参考了大佬的代码，也用Python写了一个简单的单隐层BP网络，正好今天有点时间，就记录了下误差逆传播算法和单层BP网络的Python实现。">
 <meta property="og:locale" content="custom">
 <meta property="og:image" content="https://aurora-void.com/2019/12/03/学习笔记-机器学习-误差逆传播算法及Python实现/单隐层神经网络.jpg">
 <meta property="og:image" content="https://aurora-void.com/2019/12/03/学习笔记-机器学习-误差逆传播算法及Python实现/M-P神经元模型.png">
@@ -106,7 +106,7 @@
 <meta property="og:updated_time" content="2019-12-03T11:33:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="误差逆传播算法及Python实现">
-<meta name="twitter:description" content="前端时间在学习机器学习神经网络这一章节，查了一些资料，手推了下误差逆传播算法，感觉比较了解了，参考了大佬的代码，也用Python写了一个简单的单隐层BP网络，正好今天有点时间，记录一下代码，也顺便对误差逆传播算法进行了较为通俗的描述。">
+<meta name="twitter:description" content="前段时间在学习机器学习神经网络这一章节，查了一些资料，手推了下误差逆传播算法，感觉比较了解了，参考了大佬的代码，也用Python写了一个简单的单隐层BP网络，正好今天有点时间，就记录了下误差逆传播算法和单层BP网络的Python实现。">
 <meta name="twitter:image" content="https://aurora-void.com/2019/12/03/学习笔记-机器学习-误差逆传播算法及Python实现/单隐层神经网络.jpg">
 
 
@@ -469,10 +469,10 @@
       
 
       
-        <p>前端时间在学习机器学习神经网络这一章节，查了一些资料，手推了下误差逆传播算法，感觉比较了解了，参考了大佬的代码，也用Python写了一个简单的单隐层BP网络，正好今天有点时间，记录一下代码，也顺便对误差逆传播算法进行了较为通俗的描述。</p>
+        <p>前段时间在学习机器学习神经网络这一章节，查了一些资料，手推了下误差逆传播算法，感觉比较了解了，参考了大佬的代码，也用Python写了一个简单的单隐层BP网络，正好今天有点时间，就记录了下误差逆传播算法和单层BP网络的Python实现。</p>
 <a id="more"></a>
 <h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><p>关于神经网络我就直接放图吧，如下图所示就是一个单隐层4输入2输出的神经网络。</p>
-<center><br><img src="单隐层神经网络.jpg" width="70%" alt="单隐层神经网络"><br></center>
+<center><br><img src="单隐层神经网络.jpg" width="60%" alt="单隐层神经网络"><br></center>
 
 <p>神经网络中的每一个节点被称为神经元，具体的讲，是”M-P神经元模型”。神经元将接收到的所有输入转换为总输入值，之后将总输入值与神经元的阈值对比，最后通过激活函数处理以产生输出。</p>
 <p>下图来自周志华老师的《机器学习》第五章神经网络，该图展示了一个以sigmoid函数为激活函数的M-P神经元模型。</p>
@@ -482,7 +482,7 @@
 <p>我们早就了解了梯度下降算法，误差逆传播算法其实就是基于梯度下降策略，以目标的负梯度方向对参数进行调整，可以看成是神经网络中的梯度下降，原理很简单，只不过相较于线性回归和对数几率回归，神经网络中有着更多的要优化的参数同时有着不止一个的输出。</p>
 <p>对训练样例$(x_{k},y_{k})$假定神经网络的输出为$\hat{y} = (\hat{y}_1^k,\hat{y}_2^k,…,\hat{y}_l^k)$，则在网络上的均方误差可表示为：<br>$$<br>{E}_{k} = \frac{1}{2} \sum_{j=1}^{l}(\hat{y}_{j}^{k} - y^{k}_{j})^{2}<br>$$</p>
 <p>以本文第一部分所示的单层神经网络为例：</p>
-<center><br><img src="单隐层神经网络.jpg" width="80%" alt="单隐层神经网络"><br></center>
+<center><br><img src="单隐层神经网络.jpg" width="60%" alt="单隐层神经网络"><br></center>
 
 <p>说正事前，我们先定义如下符号表示(大概瞅一眼就行,不知道了再回来看下,这不是什么正规符号,就是方便描述我自己定义的…):<br>$f$: 神经元的激活函数<br>$y$: 输入数据的真实输出<br>$E$: 网络的均方误差<br>$s_{l}$: 第$l$层的神经元个数<br>${\delta}^{(i)}$: 第i层的误差项，注意每个误差项是一个向量}<br>$a^{(i)}_{j}$: 第i层第j个神经元的输出(即经激活函数处理后的输出)<br>$a^{(i)}$: 第i层的输出向量(各神经元的输出构成)<br>$z^{(i)}_{j}$: 第i层第j个神经元的输入(经w加权后的总输入，也是神经元激活函数的输入)<br>$z^{(i)}$: 第i层的输入向量(各神经元的总输入构成)<br>$w^{(i)}_{j}$: 第i层第j个神经元的权重向量(向量的长度等于前一层的神经元个数，第1层不存在权重向量)<br>$w^{(i)}_{j,k}$: 第i层第j个神经元的对前一层第k项输入的个权重(也就是该层权重向量的第k个分量)<br>$w^{(i)}$: 第i层的权重矩阵，行向量为对应神经元的权重向量<br>${\theta}^{(i)}$: 第i层的阈值向量(由第i层各神经元的阈值构成)</p>
 <p>首先，我们注意到以下公式:</p>
