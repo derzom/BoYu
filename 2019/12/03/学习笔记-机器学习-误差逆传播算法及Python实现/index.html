@@ -92,13 +92,13 @@
 
 
 
-  <meta name="description" content="前段时间在学习机器学习神经网络这一章节，查了一些资料，手推了下误差逆传播算法，感觉比较了解了，参考了大佬的代码，也用Python写了一个简单的单隐层BP网络，正好今天有点时间，就记录了下误差逆传播算法和单层BP网络的Python实现。">
+  <meta name="description" content="前段时间在学习机器学习神经网络这一章节，查了一些资料，手推了下误差逆传播算法，感觉比较了解了，就参考了一下大佬的代码，也用Python写了一个简单的单隐层BP网络。正好今天有点时间，就简单记录了下误差逆传播算法和单层BP网络的Python实现。">
 <meta name="keywords" content="机器学习,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="误差逆传播算法及Python实现">
 <meta property="og:url" content="https://aurora-void.com/2019/12/03/学习笔记-机器学习-误差逆传播算法及Python实现/index.html">
 <meta property="og:site_name" content="BoYu&#39;s Blog">
-<meta property="og:description" content="前段时间在学习机器学习神经网络这一章节，查了一些资料，手推了下误差逆传播算法，感觉比较了解了，参考了大佬的代码，也用Python写了一个简单的单隐层BP网络，正好今天有点时间，就记录了下误差逆传播算法和单层BP网络的Python实现。">
+<meta property="og:description" content="前段时间在学习机器学习神经网络这一章节，查了一些资料，手推了下误差逆传播算法，感觉比较了解了，就参考了一下大佬的代码，也用Python写了一个简单的单隐层BP网络。正好今天有点时间，就简单记录了下误差逆传播算法和单层BP网络的Python实现。">
 <meta property="og:locale" content="custom">
 <meta property="og:image" content="https://aurora-void.com/2019/12/03/学习笔记-机器学习-误差逆传播算法及Python实现/单隐层神经网络.jpg">
 <meta property="og:image" content="https://aurora-void.com/2019/12/03/学习笔记-机器学习-误差逆传播算法及Python实现/M-P神经元模型.png">
@@ -106,7 +106,7 @@
 <meta property="og:updated_time" content="2019-12-03T11:33:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="误差逆传播算法及Python实现">
-<meta name="twitter:description" content="前段时间在学习机器学习神经网络这一章节，查了一些资料，手推了下误差逆传播算法，感觉比较了解了，参考了大佬的代码，也用Python写了一个简单的单隐层BP网络，正好今天有点时间，就记录了下误差逆传播算法和单层BP网络的Python实现。">
+<meta name="twitter:description" content="前段时间在学习机器学习神经网络这一章节，查了一些资料，手推了下误差逆传播算法，感觉比较了解了，就参考了一下大佬的代码，也用Python写了一个简单的单隐层BP网络。正好今天有点时间，就简单记录了下误差逆传播算法和单层BP网络的Python实现。">
 <meta name="twitter:image" content="https://aurora-void.com/2019/12/03/学习笔记-机器学习-误差逆传播算法及Python实现/单隐层神经网络.jpg">
 
 
@@ -469,7 +469,7 @@
       
 
       
-        <p>前段时间在学习机器学习神经网络这一章节，查了一些资料，手推了下误差逆传播算法，感觉比较了解了，参考了大佬的代码，也用Python写了一个简单的单隐层BP网络，正好今天有点时间，就记录了下误差逆传播算法和单层BP网络的Python实现。</p>
+        <p>前段时间在学习机器学习神经网络这一章节，查了一些资料，手推了下误差逆传播算法，感觉比较了解了，就参考了一下大佬的代码，也用Python写了一个简单的单隐层BP网络。正好今天有点时间，就简单记录了下误差逆传播算法和单层BP网络的Python实现。</p>
 <a id="more"></a>
 <h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><p>关于神经网络我就直接放图吧，如下图所示就是一个单隐层3输入2输出的神经网络。</p>
 <center><br><img src="单隐层神经网络.jpg" width="60%" alt="单隐层神经网络"><br></center>
